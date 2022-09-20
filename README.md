@@ -6,7 +6,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam erat volutpat.
 -
 -
 ### Technologie
--Django
--Python
--HTML, CSS
+- Django
+- Python
+- HTML, CSS
+- 
 ### Další
