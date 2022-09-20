@@ -1,3 +1,5 @@
-# Závěrečná práce
-## Databáze v djangu - Povinná četba
-Závěrečná práce do čtvrtého ročníku.
+ Závěrečná práce
+# Databáze v djangu - Povinná četba
+##Cíle
+##Technologie
+##Další
