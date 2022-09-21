@@ -5,6 +5,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam erat volutpat.
 - Možnost vybírat z několika autorů a knih
 - Vytvořit kvízy
 - Použitelnost pro výuku
+-
 ### Technologie
 - Django
 - Python
