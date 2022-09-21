@@ -11,8 +11,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam erat volutpat.
 - Python
 - HTML, CSS
 - 
-### Odkazy
-| https://docs.djangoproject.com/en/4.1/ref/applications/ |
 
 ### Časový harmonogram a postup
 #### Zaří
@@ -23,3 +21,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam erat volutpat.
 -
 #### Prosinec
 -
+
+### Odkazy
+| https://docs.djangoproject.com/en/4.1/ref/applications/ |
