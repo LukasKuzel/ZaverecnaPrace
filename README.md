@@ -11,4 +11,5 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam erat volutpat.
 - Python
 - HTML, CSS
 - 
-### Další
+### Odkazy
+| https://docs.djangoproject.com/en/4.1/ref/applications/ |
