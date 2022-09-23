@@ -7,7 +7,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - Lehký přístup k informacím
 - Vytvořit kvízy
 - Použitelnost pro vzdělání
-- Registr a login systém
+- Register a login systém
 ### Technologie
 - Django
 - Python
