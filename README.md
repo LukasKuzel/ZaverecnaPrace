@@ -8,6 +8,12 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - Vytvořit kvízy
 - Použitelnost pro vzdělání
 - Register a login systém
+
+### Autor
+- Lukáš Kůžel
+### Konzultanti
+- Mgr. Marek Lučný
+
 ### Technologie
 - Django
 - Python
@@ -26,3 +32,5 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
+
+### Zdroje
