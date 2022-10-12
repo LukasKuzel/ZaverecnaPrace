@@ -4,7 +4,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 ### Cíle
 - Možnost vybírat z několika autorů a knih
 - Přehledné prostředí
-- Lehký přístup k informacím
+- Snadný přístup k informacím
 - Vytvořit kvízy
 - Použitelnost pro vzdělání
 - Register a login systém
@@ -18,7 +18,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - Django
 - Python
 - HTML, CSS
-- 
+- MySQL
 
 ### Časový harmonogram a postup
 #### Zaří - 4h
