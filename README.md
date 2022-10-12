@@ -21,7 +21,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 
 
 ### Časový harmonogram a postup
-#### Zaří
+#### Zaří - 4h
 - Vymýšlení závěrčného projektu 
 - Vytváření modelu databáze
 #### Říjen
