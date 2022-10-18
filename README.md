@@ -24,7 +24,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 #### Zaří - 4h
 - Vymýšlení závěrčného projektu 
 - Vytváření modelu databáze
-#### Říjen -6h
+#### Říjen -9h 30m
 - 12.10. Vytváření modelů, opakování Djanga (6h)
 - 15.10. Úpravy startapss (1h)
 - 16.10. Editace stránek (2h 30m)
