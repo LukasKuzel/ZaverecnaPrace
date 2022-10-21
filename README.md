@@ -37,3 +37,4 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
 
 ### Zdroje
+| Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek|
