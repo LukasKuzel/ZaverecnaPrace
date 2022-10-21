@@ -24,10 +24,11 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 #### Zaří - 4h
 - Vymýšlení závěrčného projektu 
 - Vytváření modelu databáze
-#### Říjen -9h 30m
+#### Říjen -14h 30m
 - 12.10. Vytváření modelů, opakování Djanga (6h)
 - 15.10. Úpravy startapss (1h)
 - 16.10. Editace stránek (2h 30m)
+- 21.10. Html stránky (5h)
 #### Listopad
 -
 #### Prosinec
@@ -37,3 +38,4 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
 
 ### Zdroje
+| Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
