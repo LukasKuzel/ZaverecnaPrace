@@ -6,7 +6,18 @@ from DatabaseApps.models import *
 class BookListView(ListView):
     model = Book
     context_object_name = 'books_list'
-    template_name = 'book/listBook.html'
+    template_name = 'page/listBook.html'
+
+
+class AuthorListView(ListView):
+    model = Author
+    context_object_name = 'authors_list'
+    template_name = 'page/listAuthor.html'
+
+class QuizListView(ListView):
+    model = Author
+    context_object_name = 'quiz_list'
+    template_name = 'page/listQuiz.html'
 
 
 def index(request):
