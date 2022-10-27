@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"
+        name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Knihy{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
 </head>
-<body>
+<body class="fixedImg">
     <main>
+    <div class="containerOK">
         {% block navbar %}
             {% include "page/navbar.html" %}
         {% endblock %}
         {% block content %}
         {% endblock %}
+    </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!--Popper JS -->

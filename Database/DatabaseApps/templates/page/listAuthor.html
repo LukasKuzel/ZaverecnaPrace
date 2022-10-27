@@ -1,7 +1,17 @@
-{% extends "base2.html" %}>
+{% extends "base2.html" %}
+
 {% block content %}
-<hr class="lineHere">
-    <div>
-    
+    <hr class="lineHere">
+    <div class="containerText">
+        <h2 style="text-align: center">Autoři</h2>
+    {% for author in authors_list %}
+        <div class="card">
+          <img src="{{ author.photo.url }}" alt="fotka" style="width:100%">
+          <div class="containerCard">
+            <h4><b>{{ author.name}}</b></h4>
+            <p>Podrobnosti</p>
+          </div>
+        </div>
+    {% endfor %}
     </div>
 {% endblock %}

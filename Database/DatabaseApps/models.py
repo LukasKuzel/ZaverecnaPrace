@@ -10,6 +10,7 @@ class Genre(models.Model):
 
 
 class Profile(models.Model):
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=250, unique=True)
     surname = models.CharField(max_length=250, unique=True)
     birthdate = models.DateField
@@ -33,14 +34,17 @@ class Quiz_answer(models.Model):
 class Quiz_question(models.Model):
     question = models.CharField(max_length=250, verbose_name="Question")
     quizAnswer = models.ManyToManyField(Quiz_answer)
+    #delete2 = models.ForeignKey(Quiz_answer, on_delete=models.CASCADE, related_name='delete_answers')
 
 
 class Quiz(models.Model):
+    id = models.BigAutoField(primary_key=True)
     quizQuestion = models.ManyToManyField(Quiz_question)
-
+    #delete1 = models.ForeignKey(Quiz_question, on_delete=models.CASCADE, related_name='delete_question')
 
 
 class Author(models.Model):
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=250, unique=True, verbose_name="Name")
     surname = models.CharField(max_length=250, unique=True, verbose_name="Surname")
     birthdate = models.DateField
@@ -52,6 +56,7 @@ class Author(models.Model):
 
 
 class Book(models.Model):
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=250, unique=True, verbose_name="Title")
     rate = models.FloatField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)], blank=True,
                              null=True, help_text="Enter between 1 - 100")
@@ -65,6 +70,7 @@ class Book(models.Model):
 
 
 class Review(models.Model):
+    id = models.BigAutoField(primary_key=True)
     text = models.TextField
     rate = models.FloatField(default=0, validators=[MinValueValidator(1), MaxValueValidator(5)], blank=True,
                              null=True, help_text="Enter between 1 - 5")

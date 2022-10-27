@@ -8,7 +8,6 @@ class BookListView(ListView):
     context_object_name = 'books_list'
     template_name = 'page/listBook.html'
 
-
 class AuthorListView(ListView):
     model = Author
     context_object_name = 'authors_list'
@@ -23,17 +22,17 @@ class QuizListView(ListView):
 def index(request):
     profile = Profile.objects.all()
     books = Book.objects.all()
-    num_books = Book.objects.all().count()
     authors = Author.objects.all()
     genres = Genre.objects.all()
+    quizs = Quiz.objects.all()
 
 
     PoslatVen = {
         'profile':profile,
-        'num_books':num_books,
         'books':books,
         'authors':authors,
         'genres':genres,
+        'quizs':quizs,
 
     }
 
