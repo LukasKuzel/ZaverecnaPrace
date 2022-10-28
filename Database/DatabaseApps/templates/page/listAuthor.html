@@ -3,13 +3,13 @@
 {% block content %}
     <hr class="lineHere">
     <div class="containerText">
-        <h2 style="text-align: center">Autoři</h2>
+        <h2 style="text-align: center; padding-top: 1%">SEZNAM AUTORŮ</h2>
     {% for author in authors_list %}
         <div class="card">
           <img src="{{ author.photo.url }}" alt="fotka" style="width:100%">
           <div class="containerCard">
-            <h4><b>{{ author.name}}</b></h4>
-            <p>Podrobnosti</p>
+            <h4><b>{{ author.name}} {{ author.surname }}</b></h4>
+            <a href="#" class="bigBlueButton">Podrobnosti</a>
           </div>
         </div>
     {% endfor %}
