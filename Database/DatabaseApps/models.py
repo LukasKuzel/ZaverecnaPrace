@@ -11,12 +11,12 @@ class Genre(models.Model):
 
 class Profile(models.Model):
     id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=250, unique=True)
-    surname = models.CharField(max_length=250, unique=True)
+    name = models.CharField(max_length=250)
+    surname = models.CharField(max_length=250)
     birthdate = models.DateField
-    email = models.CharField(max_length=250, null=False)
+    email = models.CharField(max_length=250, null=False, unique=True)
     phone_number = models.IntegerField(null=False)
-    password = models.CharField(max_length=250, unique=True, null=False)
+    password = models.CharField(max_length=250, null=False)
     city = models.CharField(max_length=250, null=False)
     street = models.CharField(max_length=250, null=False)
     PCS = models.CharField(max_length=250, null=True)
@@ -34,19 +34,20 @@ class Quiz_answer(models.Model):
 class Quiz_question(models.Model):
     question = models.CharField(max_length=250, verbose_name="Question")
     quizAnswer = models.ManyToManyField(Quiz_answer)
-    #delete2 = models.ForeignKey(Quiz_answer, on_delete=models.CASCADE, related_name='delete_answers')
+    delete2 = models.ForeignKey(Quiz_answer, on_delete=models.CASCADE, related_name='delete_answers')
 
 
 class Quiz(models.Model):
     id = models.BigAutoField(primary_key=True)
     quizQuestion = models.ManyToManyField(Quiz_question)
-    #delete1 = models.ForeignKey(Quiz_question, on_delete=models.CASCADE, related_name='delete_question')
+    delete1 = models.ForeignKey(Quiz_question, on_delete=models.CASCADE, related_name='delete_question')
 
 
 class Author(models.Model):
     id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=250, unique=True, verbose_name="Name")
-    surname = models.CharField(max_length=250, unique=True, verbose_name="Surname")
+    name = models.CharField(max_length=250, unique=False, verbose_name="Name")
+    surname = models.CharField(max_length=250, unique=False, verbose_name="Surname")
+    nation = models.CharField(max_length=100, verbose_name="Nation", null=True)
     birthdate = models.DateField
     photo = models.ImageField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
@@ -57,7 +58,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=250, unique=True, verbose_name="Title")
+    name = models.CharField(max_length=250, verbose_name="Title")
     rate = models.FloatField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)], blank=True,
                              null=True, help_text="Enter between 1 - 100")
     photo = models.ImageField(blank=True, null=True)

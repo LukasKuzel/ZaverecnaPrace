@@ -4,15 +4,17 @@
     <hr class="lineHere">
     <div class="containerText">
         <h2 style="text-align: center; padding-top: 1%">SEZNAM KNIH</h2>
-    {% for book in books_list %}
-        <div class="card">
-          <img src="{{ book.photo.url }}" alt="fotka" style="width:100%">
-          <div class="containerCard">
-              <h4><b><p>{{ book.name}} {{ book.rate }}%</p></b></h4>
-              <p>{{ book.genre }}</p>
-            <a href="#" class="bigBlueButton">Podrobnosti</a>
-          </div>
-        </div>
-    {% endfor %}
+    <div class="row">
+        {% for book in books_list %}
+            <div class="card">
+              <img src="{{ book.photo.url }}" alt="fotka" style="width:100%">
+              <div class="containerCard">
+                  <h4><b><p>{{ book.name}} {{ book.rate }}%</p></b></h4>
+                  <p>{{ book.genre }}</p>
+                <a href="#" class="bigBlueButton">Podrobnosti</a>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
     </div>
 {% endblock %}
