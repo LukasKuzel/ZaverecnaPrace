@@ -7,9 +7,10 @@
     <div class="row">
         {% for author in authors_list %}
             <div class="card">
-              <img src="{{ author.photo.url }}" alt="fotka" style="width:100%">
+              <img src="{{ author.photo.url }}" alt="fotka" class="cardImage">
               <div class="containerCard">
                 <h4><b>{{ author.name}} {{ author.surname }}</b></h4>
+                  <p>{{ author.birthdate }}</p>
                 <a href="#" class="bigBlueButton">Podrobnosti</a>
               </div>
             </div>

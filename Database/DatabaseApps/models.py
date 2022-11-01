@@ -48,7 +48,7 @@ class Author(models.Model):
     name = models.CharField(max_length=250, unique=False, verbose_name="Name")
     surname = models.CharField(max_length=250, unique=False, verbose_name="Surname")
     nation = models.CharField(max_length=100, verbose_name="Nation", null=True)
-    birthdate = models.DateField
+    birthdate = models.CharField(max_length=100, verbose_name="Age", null=True)
     photo = models.ImageField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
 
