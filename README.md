@@ -33,7 +33,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 28.10. Úprava(1h30m)
 - 29.10. Úprava(2h)
 #### Listopad
--
+- 1.11. Editace (30m)
 #### Prosinec
 -
 
