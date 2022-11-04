@@ -3,20 +3,35 @@ from django.views.generic import ListView, DetailView
 
 from DatabaseApps.models import *
 
+
 class BookListView(ListView):
     model = Book
     context_object_name = 'books_list'
     template_name = 'page/listBook.html'
+
 
 class AuthorListView(ListView):
     model = Author
     context_object_name = 'authors_list'
     template_name = 'page/listAuthor.html'
 
+
 class QuizListView(ListView):
     model = Author
     context_object_name = 'quiz_list'
     template_name = 'page/listQuiz.html'
+
+
+class BookDetailView(DetailView):
+    model = Book
+    context_object_name = 'books_detail'
+    template_name = 'page/detailBook.html'
+
+
+class AuthorDetailView(DetailView):
+    model = Author
+    context_object_name = 'authors_detail'
+    template_name = 'page/detailAuthor.html'
 
 
 def index(request):

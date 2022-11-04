@@ -40,8 +40,7 @@ ul li a:hover {
   color: darkslategrey;
 }
 
-.leftt1 {
-  display: flex;
+.logoLeft {
   list-style-type: none;
   overflow: hidden;
   padding: 8px;
@@ -49,23 +48,20 @@ ul li a:hover {
   font-size: 40px;
 }
 
-.leftt {
+.ulLeft {
   font-size: 20px;
   text-align: left;
 }
 
-.rightt1 {
-  display: flex;
-  display: block;
+.lomitkoRight {
   color: white;
   margin: 5px;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 20px;
-  text-align: right;
 }
 
-.rightt {
+.ulRight {
   font-size: 20px;
   text-align: right;
 }
@@ -136,8 +132,15 @@ ul li a:hover {
   margin-left: 4%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 20%;
-  height: 20%;
+  max-width: 230px;
+  height: auto;
+
+}
+
+
+.cardImage {
+  height: 300px;
+  width: auto;
 }
 
 .card:hover {
@@ -146,9 +149,10 @@ ul li a:hover {
 
 .containerCard {
   padding: 4px;
+  height: 100%;
 }
 
-.bigBlueButton {
+.buttonBlue{
   color: white;
   border-radius: 10px;
   background-color: blue;
@@ -158,12 +162,30 @@ ul li a:hover {
   font-size: 16px;
   transition-duration: 0.5s;
   cursor: pointer;
-  padding: 10px 2px;
+  padding: 12px 12px 12px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 50%;
 }
 
-.bigBlueButton:hover {
+.buttonBlue:hover {
   background-color: white;
   color: black;
+}
+
+.card-text-genre{
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  padding: 12px 1px 1px;
+  margin-top: 10%;
+}
+
+.card-genre{
+  color: black;
+  text-decoration: none;
+  padding: 2px;
+
 }
 
 @media screen and (max-width: 480px) {
@@ -209,7 +231,7 @@ ul li a:hover {
     color: darkslategrey;
   }
 
-  .leftt1 {
+  .logoLeft {
     display: flex;
     list-style-type: none;
     overflow: hidden;
@@ -218,12 +240,12 @@ ul li a:hover {
     font-size: 25px;
   }
 
-  .leftt {
+  .ulLeft {
     font-size: 12px;
     text-align: left;
   }
 
-  .rightt1 {
+  .lomitkoRight {
     display: flex;
     display: block;
     color: white;
@@ -234,7 +256,7 @@ ul li a:hover {
     text-align: right;
   }
 
-  .rightt {
+  .ulRight {
     font-size: 12px;
     text-align: right;
   }

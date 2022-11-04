@@ -22,8 +22,11 @@ class Profile(models.Model):
     PCS = models.CharField(max_length=250, null=True)
     timestamp = models.DateTimeField
 
+    class Meta:
+        ordering = ['name']
+
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.surname} {self.email}'
 
 
 class Quiz_answer(models.Model):
@@ -48,12 +51,17 @@ class Author(models.Model):
     name = models.CharField(max_length=250, unique=False, verbose_name="Name")
     surname = models.CharField(max_length=250, unique=False, verbose_name="Surname")
     nation = models.CharField(max_length=100, verbose_name="Nation", null=True)
-    birthdate = models.DateField
+    birthdate = models.CharField(max_length=100, verbose_name="Age", null=True)
     photo = models.ImageField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
-        return self.name
+        return f'{self.name} {self.surname}'
+
+
 
 
 class Book(models.Model):
@@ -66,8 +74,11 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre)
     author = models.ManyToManyField(Author)
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
-        return self.name
+        return f'{self.name}'
 
 
 class Review(models.Model):
