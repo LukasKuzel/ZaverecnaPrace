@@ -30,10 +30,11 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 16.10. Editace stránek (2h 30m)
 - 21.10. Html stránky (5h)
 - 27.10. Kompatibilita(6h)
-- 28.10. Úprava(1h30m)
-- 29.10. Úprava(2h)
+- 28.10. Úprava (1h30m)
+- 29.10. Úprava (2h)
 #### Listopad
 - 1.11. Editace (30m)
+- 4.11. Frontend Improvement (6h)
 #### Prosinec
 -
 
