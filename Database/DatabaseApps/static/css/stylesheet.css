@@ -112,8 +112,6 @@ ul li a:hover {
 .containerText{
   background-color: white;
   font-family: "Gentium Book Basic";
-  padding-left: 4px;
-  padding-right: 4px;
   padding-bottom: 100%;
 }
 
@@ -129,14 +127,13 @@ ul li a:hover {
 .card {
   border: solid black;
   margin-top: 2%;
-  margin-left: 4%;
+  margin-left: 3.9%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   max-width: 230px;
   height: auto;
 
 }
-
 
 .cardImage {
   height: 300px;
