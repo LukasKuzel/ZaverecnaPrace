@@ -36,6 +36,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 1.11. Editace (30m)
 - 4.11. Frontend Improvement (6h)
 - 5.11. Ukládání souborů (3h)
+- 13.11. Templates detail (2h)
 #### Prosinec
 -
 
