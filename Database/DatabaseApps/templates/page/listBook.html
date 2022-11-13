@@ -1,5 +1,6 @@
 {% extends "base2.html" %}
 
+{% block title %}Seznam knih{% endblock %}
 {% block content %}
     <hr class="lineHere">
     <div class="containerText">
@@ -12,7 +13,7 @@
                   <h4><b><p>{{ book.name}} {{ book.rate }}%</p></b></h4>
                   <p class="card-text-genre">{% for genre in book.genre.all %}<a href="#" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
               </div>
-            <a href="#" class=buttonBlue>Podrobnosti</a>
+            <a href="{% url 'bookdetail' book.pk %}" class=buttonBlue>Podrobnosti</a>
             </div>
         {% endfor %}
     </div>

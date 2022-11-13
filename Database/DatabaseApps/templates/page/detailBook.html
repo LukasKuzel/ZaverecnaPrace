@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base2.html" %}
 
-</body>
-</html>
+{% block content %}
+    <hr class="lineHere">
+    <div class="containerTextDetail">
+        <h2 style="text-align: center; padding-top: 1%">Informace o knize</h2>
+        <div class="containerDetail">
+            <div class="detailText">
+                <h3>{{ books_detail.name }}</h3>
+                <h3>{{ books_detail.rate }}</h3>
+                {% if books_detail.photo %}
+                    <a href="{{ books_detail.photo.url }}"><img src="{{ books_detail.photo.url }}" class="photoDetail"></a>
+                {% endif %}
+                <p>Napsal: {% for author in books_detail.author.all %}<a href="#" class="card-genre">{{ author.name }} {{ author.surname }}</a>{% endfor %}</p>
+                <p>{% for genre in books_detail.genre.all %}<a href="#" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
+                <p></p>
+                <div>
+                    {{ books_detail.plot }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

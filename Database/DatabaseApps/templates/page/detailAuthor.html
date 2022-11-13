@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base2.html" %}
 
-</body>
-</html>
+{% block content %}
+    <hr class="lineHere">
+    <div class="containerTextDetail">
+        <h2 style="text-align: center; padding-top: 1%">Informace o autorovi</h2>
+        <div class="containerDetail">
+            <div class="detailText">
+                <h3>{{ authors_detail.name }} {{ authors_detail.surname }}</h3>
+                {% if authors_detail.photo %}
+                    <a href="{{ authors_detail.photo.url }}"><img src="{{ authors_detail.photo.url }}" class="photoDetail"></a>
+                {% endif %}
+                <p></p>
+                <div>
+                    {{ authors_detail.bio }}
+                </div>
+                <p></p>
+                <div>
+                    <p>Knihy:</p>
+                    <p>{% for book in author_has_book.book.all %}<a href="#" class="card-genre">{{ book.name }}</a>{% endfor %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,5 +1,6 @@
 {% extends "base2.html" %}
 
+{% block title %}Seznam autorů{% endblock %}
 {% block content %}
     <hr class="lineHere">
     <div class="containerText">
@@ -12,7 +13,7 @@
                     <h4><b>{{ author.name}} {{ author.surname }}</b></h4>
                       <p>{{ author.birthdate }}</p>
                   </div>
-                 <a class="buttonBlue" href="{% url 'booklist' %}">Podrobnosti</a>
+                 <a class="buttonBlue" href="{% url 'authordetail' author.pk %}">Podrobnosti</a>
                 </div>
             {% endfor %}
         </div>

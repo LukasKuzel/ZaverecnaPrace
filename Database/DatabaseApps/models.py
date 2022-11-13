@@ -87,6 +87,11 @@ class Book(models.Model):
         return f'{self.name}'
 
 
+class AuthorHasBook(models.Model):
+    author = models.ManyToManyField(Author)
+    book = models.ManyToManyField(Book)
+
+
 class Review(models.Model):
     id = models.BigAutoField(primary_key=True)
     text = models.TextField

@@ -66,31 +66,8 @@ ul li a:hover {
   text-align: right;
 }
 
-
-
 .box{
   background-image: url("/DatabaseApps/static/img/books.jpg");
-}
-
-.contentHere {
-  position: relative;
-  margin-left: 25%;
-  padding: 15%;
-  justify-content: center;
-  align-items: center;
-}
-
-#text {
-  position: absolute;
-  color: white;
-  font-size: 60px;
-  padding: 20px;
-}
-
-#text:hover {
-  background-color: white;
-  color: darkslategrey;
-  border-radius: 80px;
 }
 
 .lineHere {
@@ -109,10 +86,35 @@ ul li a:hover {
   margin-right: 200px;
 }
 
+.containerDetail {
+  margin-top: 60px;
+  margin-left: 150px;
+  margin-right: 150px;
+  border-radius: 20px;
+  border: solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-width: 5px 10px;
+}
+
+.detailText {
+  margin: 20px;
+}
+
 .containerText{
   background-color: white;
   font-family: "Gentium Book Basic";
   padding-bottom: 100%;
+}
+
+.containerTextDetail{
+  background-color: white;
+  font-family: "Gentium Book Basic";
+  padding-bottom: 20%;
+}
+
+.photoDetail{
+  height: 300px;
+  width: 220px;
 }
 
 .fixedImg {
@@ -132,7 +134,6 @@ ul li a:hover {
   transition: 0.3s;
   max-width: 230px;
   height: auto;
-
 }
 
 .cardImage {
