@@ -44,6 +44,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
 | https://django.fun/en/qa/427054/ |
 | https://stackoverflow.com/questions/20878929/css-html-putting-up-a-text-label-on-my-image |
+| https://blog.hubspot.com/website/css-margin-vs-padding |
 
 ### Zdroje
 | Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
