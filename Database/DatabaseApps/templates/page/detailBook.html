@@ -11,7 +11,7 @@
                 {% if books_detail.photo %}
                     <a href="{{ books_detail.photo.url }}"><img src="{{ books_detail.photo.url }}" class="photoDetail"></a>
                 {% endif %}
-                <p>Napsal: {% for author in books_detail.author.all %}<a href="#" class="card-genre">{{ author.name }} {{ author.surname }}</a>{% endfor %}</p>
+                <p>Napsal: {% for author in books_detail.author.all %}<a href="{% url 'authordetail' author.pk %}" class="card-genre">{{ author.name }} {{ author.surname }}</a>{% endfor %}</p>
                 <p>{% for genre in books_detail.genre.all %}<a href="#" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
                 <p></p>
                 <div>

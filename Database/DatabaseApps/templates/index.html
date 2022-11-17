@@ -1,8 +1,95 @@
 {% extends "base2.html" %}
+{% load static %}
 
 {% block content %}
     <hr class="lineHere">
     <div class="containerText">
+    <h2 style="text-align: center; padding: 10px">Úvodní stránka</h2>
+        <div>
+            <img src="{% static '../static/img/list-of-book.png' %}" alt="My image" class="indexImage">
+        </div>
+        <div class="row">
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Fantasy/">
+                    <div  class="indexBoxContent">
+                        <img src="{% static '../static/img/fantasy.jpg' %}" class="labelImg">
+                        <span>Fantasy</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Sci-fi/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/sci-fi.jpg' %}" class="labelImg">
+                        <span>Sci-fi</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Romány/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/novels.jpg' %}" class="labelImg">
+                        <span>Romány</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Drama/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/drama.jpg' %}" class="labelImg">
+                        <span>Drama</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Komedie/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/comedy.jpg' %}" class="labelImg">
+                        <span>Komedie</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Poezie/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/poetry.jpg' %}" class="labelImg">
+                        <span>Poezie</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Detektivky/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/detective.jpg' %}" class="labelImg">
+                        <span>Detektivky</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Horor/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/horor.jpg' %}" class="labelImg">
+                        <span>Horor</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Literatura česká/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/cz.svg.png' %}" class="labelImg">
+                        <span>Literatura česká</span>
+                    </div>
+                </a>
+            </div>
+            <div class="indexBox">
+                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Literatura světová/">
+                    <div class="indexBoxContent">
+                        <img src="{% static '../static/img/w.jpg' %}" class="labelImg">
+                        <span>Literatura světová</span>
+                    </div>
+                </a>
+            </div>
 
+        </div>
     </div>
 {% endblock %}

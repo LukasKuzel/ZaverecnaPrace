@@ -9,6 +9,22 @@ class BookListView(ListView):
     context_object_name = 'books_list'
     template_name = 'page/listBook.html'
 
+    def get_queryset(self):
+        if 'genre_name' in self.kwargs:
+            return Book.objects.filter(genre__name=self.kwargs['genre_name']).all()
+        else:
+            return Book.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if 'genre_name' in self.kwargs:
+            context['view_title'] = f"ŽÁNR: {self.kwargs['genre_name']}"
+            context['view_head'] = f"ŽÁNR KNIH: {self.kwargs['genre_name']}"
+        else:
+            context['view_title'] = 'KNIHY'
+            context['view_head'] = 'SEZNAM KNIH'
+        return context
+
 
 class AuthorListView(ListView):
     model = Author

@@ -1,0 +1,58 @@
+.containerText{
+  background-color: white;
+  font-family: "Gentium Book Basic";
+  padding-bottom: 100%;
+}
+
+ .card {
+  border: solid black;
+  margin-top: 2%;
+  margin-left: 3.9%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  max-width: 230px;
+  height: auto;
+}
+
+.cardImage {
+  height: 300px;
+  width: auto;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(77,107,83);
+}
+
+.containerCard {
+  padding: 4px;
+  height: 100%;
+}
+
+.buttonBlue{
+  color: white;
+  border-radius: 10px;
+  background-color: blue;
+  border: 2px solid blue;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  padding: 12px 12px 12px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 50%;
+}
+
+.buttonBlue:hover {
+  background-color: white;
+  color: black;
+}
+
+.card-text-genre{
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  padding: 12px 1px 1px;
+  margin-top: 10%;
+}

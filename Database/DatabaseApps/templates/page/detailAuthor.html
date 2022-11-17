@@ -17,7 +17,16 @@
                 <p></p>
                 <div>
                     <p>Knihy:</p>
-                    <p>{% for book in author_has_book.book.all %}<a href="#" class="card-genre">{{ book.name }}</a>{% endfor %}</p>
+                    <p>{% for book in authors_detail.book_set.all %}
+                        <div class="row">
+                            <div class="containerDetailAuthorAndBook">
+                                <a href="{% url 'bookdetail' book.pk %}" class="booksInAuthors">{{ book.name }}</a>
+                                <p></p>
+                                <img src="{{ book.photo.url }}" alt="fotka" class="photoDetail">
+                            </div>
+                    </div>
+                    {% endfor %}
+                    </p>
                 </div>
             </div>
         </div>
