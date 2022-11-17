@@ -46,3 +46,4 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 
 ### Zdroje
 | Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
+| Obrázek Knih [online]. -: -, - [cit. 2022-11-17]. Dostupné z: https://thecommuniquechs.com/2552/opinion/what-is-the-best-book-genre/ |
