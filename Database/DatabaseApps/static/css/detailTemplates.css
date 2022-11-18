@@ -5,11 +5,13 @@
   border-radius: 20px;
   border: solid black;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-width: 5px 10px;
+  border-width: 8px 10px;
 }
 
 .detailText {
-  margin: 20px;
+  color: black;
+  padding: 20px;
+  background-color: darkslategrey;
 }
 
 .containerTextDetail{
