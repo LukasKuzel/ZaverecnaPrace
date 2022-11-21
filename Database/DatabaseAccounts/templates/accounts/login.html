@@ -4,9 +4,9 @@
 <hr class="lineHere">
     <div class="containerText">
         <h1>Login</h1>
-        <form class="site-form" action="{% url 'loginlist' %}" method="post">
+        <form class="site-form" action="{% url 'login' %}" method="post">
             {% csrf_token %}
-            {{ forms }}
+            {{ forms.as_p }}
             <input type="submit" value="Login">
         </form>
     </div>

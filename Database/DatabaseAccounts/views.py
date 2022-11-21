@@ -1,16 +1,22 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, logout
+
+from .models import Profile
+from .forms import CreateUserForm
+
 
 
 def register_view(request):
     if request.method == 'POST':
-        forms = UserCreationForm(request.POST)
+        forms = CreateUserForm(request.POST)
         if forms.is_valid():
-            forms.save()
-            #login the user in
+            user = forms.save()
+            #log in the user in
+            login(request, user)
             return redirect('index')
     else:
-        forms = UserCreationForm
+        forms = CreateUserForm
 
     PoslatVen2 = {
         'forms':forms
@@ -24,6 +30,9 @@ def login_view(request):
     if request.method == 'POST':
         forms = AuthenticationForm(data=request.POST)
         if forms.is_valid():
+            #log in the user
+            user = forms.get_user()
+            login(request, user)
             return redirect('index')
     else:
         forms = AuthenticationForm()
@@ -34,3 +43,10 @@ def login_view(request):
     }
 
     return render(request, 'accounts/login.html', context=PoslatVen3)
+
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('index')
+

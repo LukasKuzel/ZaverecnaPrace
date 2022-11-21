@@ -2,12 +2,20 @@
 
 {% block content %}
 <hr class="lineHere">
-    <div class="containerText">
-        <h1>Register</h1>
-        <form class="site-form" action="{% url 'registerlist' %}" method="post">
-            {% csrf_token %}
-            {{ forms }}
-            <input type="submit" value="Register">
-        </form>
+    <div class="containerRegisterTextMain">
+        <div class="containerRegisterText">
+            <form class="site-form" action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <h2 style="text-align: center;padding-top: 1%; text-transform: uppercase">Register</h2>
+                <div class="containerRegister">
+                    {% for form in forms %}
+                        {{ form.label }}
+                        {{ form }}
+                        <p></p>
+                    {% endfor %}
+                <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+.containerRegisterTextMain{
+    padding-top: 60px;
+    background-color: white;
+    font-family: "Gentium Book Basic";
+    padding-bottom: 20%;
+    padding-left: 150px;
+    padding-right: 150px;
+
+}
+
+.containerRegisterText{
+    margin-top: 60px;
+    margin-left: 250px;
+    margin-right: 250px;
+    border-radius: 20px;
+    border: solid black;
+}
+
+.containerRegister{
+    margin-left: 30%;
+}
