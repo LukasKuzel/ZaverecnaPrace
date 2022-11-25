@@ -40,6 +40,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 17.11. Úprava hlavní stránky a url odkazů na detaily(4h 30m)
 - 18.11. Login/Register startapp (3h)
 - 21.11. Login/Register (2h)
+- 25.11. Login/Register (4h)
 #### Prosinec
 -
 
