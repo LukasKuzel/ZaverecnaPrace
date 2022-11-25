@@ -2,12 +2,26 @@
 
 {% block content %}
 <hr class="lineHere">
-    <div class="containerText">
-        <h1>Login</h1>
-        <form class="site-form" action="{% url 'login' %}" method="post">
-            {% csrf_token %}
-            {{ forms.as_p }}
-            <input type="submit" value="Login">
-        </form>
+    <div class="containerLoginTextMain">
+        <div class="containerLoginText">
+            <div class="containerLogin">
+                <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Login</h2>
+                <form class="site-form" action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>Uživatelské jméno: </td>
+                            <td>{{ forms.username }}</td>
+                        </tr>
+                        <tr>
+                            <td>Heslo: </td>
+                            <td>{{ forms.password }}</td>
+                        </tr>
+                    </table>
+                    <p></p>
+                    <input type="submit" value="Login" class="registerButton">
+                </form>
+            </div>
+        </div>
     </div>
 {% endblock %}

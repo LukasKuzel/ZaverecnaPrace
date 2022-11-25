@@ -1,21 +1,72 @@
 .containerRegisterTextMain{
-    padding-top: 60px;
     background-color: white;
     font-family: "Gentium Book Basic";
     padding-bottom: 20%;
-    padding-left: 150px;
-    padding-right: 150px;
 
 }
 
 .containerRegisterText{
-    margin-top: 60px;
-    margin-left: 250px;
-    margin-right: 250px;
-    border-radius: 20px;
-    border: solid black;
+    padding-top: 10%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.containerRegisterText td{
+    color: white !important;
 }
 
 .containerRegister{
-    margin-left: 30%;
+    padding-top: 5%;
+    margin-left: 15%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    padding-right: 15%;
+    border: solid black;
+    border-radius: 20px;
+    background-color: darkslategrey;
+    color: white;
 }
+
+.registerButton{
+    box-shadow: none !important;
+    outline: 0px !important;
+    width: 30%;
+    margin-left: 38% !important;
+    background: lightseagreen !important;
+    color: white !important;
+    border-color: darkcyan !important;
+}
+
+.containerLoginTextMain{
+    background-color: white;
+    font-family: "Gentium Book Basic";
+    padding-bottom: 20%;
+
+}
+
+.containerLoginText{
+    padding-top: 10%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.containerLogin{
+    padding-top: 5%;
+    margin-left: 15%;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    padding-right: 15%;
+    border: solid black;
+    border-radius: 20px;
+    background-color: darkslategrey;
+    color: white;
+}
+
+.containerLogin td{
+    color: white !important;
+}
+
+#id_username, #id_password{
+    width: auto;
+}
+

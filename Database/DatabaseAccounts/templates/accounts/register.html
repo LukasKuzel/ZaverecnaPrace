@@ -1,21 +1,47 @@
+1 lines (20 sloc)  746 Bytes
+
 {% extends "base2.html"%}
 
 {% block content %}
 <hr class="lineHere">
     <div class="containerRegisterTextMain">
-        <div class="containerRegisterText">
-            <form class="site-form" action="{% url 'register' %}" method="post">
-                {% csrf_token %}
-                <h2 style="text-align: center;padding-top: 1%; text-transform: uppercase">Register</h2>
-                <div class="containerRegister">
-                    {% for form in forms %}
-                        {{ form.label }}
-                        {{ form }}
+        <div>
+            <div class="containerRegisterText">
+                <form class="site-form" action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="containerRegister">
+                        <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Register</h2>
+                        <table>
+                            <tr>
+                                <td>Uživatelské jméno:</td>
+                                <td>{{ forms.username }}</td>
+                            </tr>
+                            <tr>
+                                <td>Jméno:</td>
+                                <td>{{ forms.first_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Příjmení:</td>
+                                <td>{{ forms.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>{{ forms.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>Heslo:</td>
+                                <td>{{ forms.password1 }}</td>
+                            </tr>
+                            <tr>
+                                <td>Potvrzení hesla:</td>
+                                <td>{{ forms.password2 }}</td>
+                            </tr>
+                        </table>
                         <p></p>
-                    {% endfor %}
-                <input type="submit" value="Register">
-                </div>
-            </form>
+                    <input type="submit" value="Register" class="registerButton">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock %}
