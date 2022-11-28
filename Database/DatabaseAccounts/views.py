@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
+from django.contrib import messages
 
 from .models import Profile
 from .forms import CreateUserForm
@@ -10,13 +11,18 @@ from .forms import CreateUserForm
 def register_view(request):
     if request.method == 'POST':
         forms = CreateUserForm(request.POST)
+
         if forms.is_valid():
             user = forms.save()
+            userMessage = forms.cleaned_data.get('username')
             #log in the user in
             login(request, user)
+            messages.success(request, 'Účet byl vytvořen pro ' + userMessage)
             return redirect('index')
     else:
         forms = CreateUserForm
+        #messages.error(request, 'Něco nebyl zadáno správně. Zkuste to prosím znovu.')
+
 
     PoslatVen2 = {
         'forms':forms

@@ -10,6 +10,7 @@ class CreateUserForm(UserCreationForm):
         model = User
         fields = ['username','first_name','last_name','email','password1','password2']
 
+
     def __str__(self):
         return f'{self.first_name} {self.last_name} {self.email}'
 

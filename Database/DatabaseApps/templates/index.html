@@ -8,6 +8,13 @@
         <div>
             <img src="{% static '../static/img/list-of-book.png' %}" alt="My image" class="indexImage">
         </div>
+        <p></p>
+        <ul class="messagesMid">
+        {% for message in messages %}
+            <li class="messages">{{ message }}</li>
+        {% endfor %}
+        </ul>
+        <p></p>
         <div class="row">
             <div class="indexBox">
                 <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Fantasy/">
@@ -89,7 +96,7 @@
                     </div>
                 </a>
             </div>
-
         </div>
+
     </div>
 {% endblock %}

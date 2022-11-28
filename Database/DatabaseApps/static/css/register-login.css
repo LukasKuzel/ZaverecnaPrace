@@ -25,6 +25,7 @@
     border-radius: 20px;
     background-color: darkslategrey;
     color: white;
+    box-shadow: 0 10px 10px 2px darkslategrey;
 }
 
 .registerButton{
@@ -40,7 +41,7 @@
 .containerLoginTextMain{
     background-color: white;
     font-family: "Gentium Book Basic";
-    padding-bottom: 20%;
+    padding-bottom: 30%;
 
 }
 
@@ -60,6 +61,7 @@
     border-radius: 20px;
     background-color: darkslategrey;
     color: white;
+    box-shadow: 0 10px 10px 2px darkslategrey;
 }
 
 .containerLogin td{
@@ -70,3 +72,41 @@
     width: auto;
 }
 
+.logoutButton{
+    background-color: darkslategrey;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-transform: uppercase;
+}
+
+.logoutButton:hover{
+    background-color: white;
+    color: darkslategrey;
+}
+
+.messagesMid{
+    text-align: center;
+    justify-content: center;
+}
+
+.messages {
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: darkred;
+    border-radius: 20px;
+    font-size: 20px;
+    max-width: 100%;
+    color: white;
+    padding: 20px;
+}
