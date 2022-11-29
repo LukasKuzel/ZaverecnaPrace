@@ -53,6 +53,9 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://techflow360.com/how-to-perform-django-form-validation-with-regex/ |
 | https://docs.djangoproject.com/en/4.1/ref/forms/validation/ |
 | https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms |
+| https://stackoverflow.com/questions/22989515/bootstrap-add-margin-padding-space-between-columns |
+| https://getbootstrap.com/docs/4.0/layout/grid/ |
+| https://css-tricks.com/logic-in-css-media-queries/ |
 |  |
 
 ### Zdroje
