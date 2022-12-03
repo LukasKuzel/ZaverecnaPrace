@@ -11,7 +11,6 @@ from .forms import CreateUserForm
 def register_view(request):
     if request.method == 'POST':
         forms = CreateUserForm(request.POST)
-
         if forms.is_valid():
             user = forms.save()
             userMessage = forms.cleaned_data.get('username')
@@ -19,9 +18,11 @@ def register_view(request):
             login(request, user)
             messages.success(request, 'Účet byl vytvořen pro ' + userMessage)
             return redirect('index')
+        else:
+            messages.error(request, 'Něco nebylo zadáno správně. Zkuste to prosím znovu.')
     else:
         forms = CreateUserForm
-        #messages.error(request, 'Něco nebyl zadáno správně. Zkuste to prosím znovu.')
+
 
 
     PoslatVen2 = {
@@ -40,6 +41,8 @@ def login_view(request):
             user = forms.get_user()
             login(request, user)
             return redirect('index')
+        else:
+            messages.error(request, 'Špatné jméno nebo heslo')
     else:
         forms = AuthenticationForm()
 

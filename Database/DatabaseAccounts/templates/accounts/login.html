@@ -21,6 +21,13 @@
                     <p></p>
                     <input type="submit" value="Login" class="registerButton">
                 </form>
+                <ul class="messagesMid">
+                    {% for message in messages %}
+                        {% if message %}
+                            <li class="messages">{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
