@@ -19,6 +19,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - Python
 - HTML, CSS
 - MySQL
+- Bootstrap
 
 ### Časový harmonogram a postup
 #### Zaří - 4h
@@ -32,7 +33,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 27.10. Kompatibilita(6h)
 - 28.10. Úprava (1h30m)
 - 29.10. Úprava (2h)
-#### Listopad
+#### Listopad (26h 30m)
 - 1.11. Editace (30m)
 - 4.11. Frontend Improvement (6h)
 - 5.11. Ukládání souborů (3h)
