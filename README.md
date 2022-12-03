@@ -44,7 +44,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 25.11. Login/Register (4h)
 - 28.11. Login/Register-messages (1h30m)
 #### Prosinec
--
+- 3.12. Login/Register-email (3h30m)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
