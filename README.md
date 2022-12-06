@@ -58,7 +58,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://stackoverflow.com/questions/22989515/bootstrap-add-margin-padding-space-between-columns |
 | https://getbootstrap.com/docs/4.0/layout/grid/ |
 | https://css-tricks.com/logic-in-css-media-queries/ |
-|  |
+| https://www.tangowithdjango.com/book17/chapters/login.html |
 
 ### Zdroje
 | Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
