@@ -17,26 +17,6 @@ class Genre(models.Model):
         return self.name
 
 
-class Profile(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=250)
-    surname = models.CharField(max_length=250)
-    birthdate = models.DateField
-    email = models.CharField(max_length=250, null=False, unique=True)
-    phone_number = models.IntegerField(null=False)
-    password = models.CharField(max_length=250, null=False)
-    city = models.CharField(max_length=250, null=False)
-    street = models.CharField(max_length=250, null=False)
-    PCS = models.CharField(max_length=250, null=True)
-    timestamp = models.DateTimeField
-
-    class Meta:
-        ordering = ['name']
-
-    def __str__(self):
-        return f'{self.name} {self.surname} {self.email}'
-
-
 class Quiz_answer(models.Model):
     answer = models.CharField(max_length=250, verbose_name="Answer")
     verify = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(1)], null=False, verbose_name="0-false or 1-true")
@@ -87,17 +67,11 @@ class Book(models.Model):
         return f'{self.name}'
 
 
-class AuthorHasBook(models.Model):
-    author = models.ManyToManyField(Author)
-    book = models.ManyToManyField(Book)
-
-
 class Review(models.Model):
     id = models.BigAutoField(primary_key=True)
     text = models.TextField
     rate = models.FloatField(default=0, validators=[MinValueValidator(1), MaxValueValidator(5)], blank=True,
                              null=True, help_text="Enter between 1 - 5")
-    profile = models.ManyToManyField(Profile)
     book = models.ManyToManyField(Book)
 
     def __str__(self):

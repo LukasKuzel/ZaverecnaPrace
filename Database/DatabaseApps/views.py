@@ -67,13 +67,8 @@ class AuthorDetailView(DetailView):
     template_name = 'page/detailAuthor.html'
 
 
-class AuthorHasBook(DetailView):
-    model = AuthorHasBook
-    context_object_name = 'author_has_book'
-
 
 def index(request):
-    profile = Profile.objects.all()
     books = Book.objects.all()
     authors = Author.objects.all()
     genres = Genre.objects.all()
@@ -81,7 +76,6 @@ def index(request):
 
 
     PoslatVen = {
-        'profile':profile,
         'books':books,
         'authors':authors,
         'genres':genres,
