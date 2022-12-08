@@ -77,14 +77,14 @@
     border: none;
     border-radius: 20px;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
     margin: 4px 2px;
     cursor: pointer;
-    transition-duration: 0.4s;
+    transition-duration: 0s;
     text-transform: uppercase;
 }
 

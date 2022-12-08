@@ -15,6 +15,7 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         model._meta.get_field('email')._unique = True
+        model._meta.get_field('username')._unique = True
         fields = ['username','first_name','last_name','email','password1','password2']
 
     def __str__(self):
@@ -22,6 +23,7 @@ class CreateUserForm(UserCreationForm):
 
 
 class CreateProfileForm(forms.ModelForm):
+
     class Meta:
         model = Profile
-        fields = ['city']
+        fields = ['phone_number','city','street','PCS','picture']

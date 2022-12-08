@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 
 from DatabaseApps.models import *
 
+from django.contrib.auth.decorators import login_required
 
 class BookListView(ListView):
     model = Book
@@ -89,5 +90,6 @@ def index(request):
     }
 
     return render(request, 'index.html', context=PoslatVen)
+
 
 

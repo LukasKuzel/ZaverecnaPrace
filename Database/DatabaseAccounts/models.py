@@ -4,14 +4,17 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
+def profile_images(instance, filename):
+    return "image_profile/" + str(instance.id) + "/image/" + filename
+
 class Profile(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
     birthdate = models.DateField
-    phone_number = models.CharField(max_length=12,null=False)
-    city = models.CharField(max_length=250, null=False)
-    street = models.CharField(max_length=250, null=False)
-    PCS = models.CharField(max_length=250, null=True)
+    phone_number = models.CharField(max_length=12,null=True, blank=True)
+    city = models.CharField(max_length=250, null=True, blank=True)
+    street = models.CharField(max_length=250, null=True, blank=True)
+    PCS = models.CharField(max_length=250, null=True, blank=True)
+    picture = models.ImageField(upload_to=profile_images, blank=True)
     timestamp = models.DateTimeField
 
     @receiver(post_save, sender=User)

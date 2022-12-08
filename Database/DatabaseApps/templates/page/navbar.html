@@ -9,13 +9,17 @@
             </ul>
         </ul>
         <ul class="ulRight">
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <li class="lomitkoRight">/</li>
-            <li><a href="{% url 'register' %}">Register</a></li>
-            <li class="lomitkoRight">/</li>
-            <li><form class="logout-link" action="{% url 'logout' %}" method="post">
+            {% if user.is_authenticated %}
+                <span class="lomitkoRight">{{ request.user }}</span>
+                <li class="lomitkoRight">/</li>
+                <li><form class="logout-link" action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
                 <button type="submit" class="logoutButton">Logout</button>
-            </form></li>
+                </form></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li class="lomitkoRight">/</li>
+                <li><a href="{% url 'register' %}">register</a></li>
+            {% endif %}
         </ul>
 </nav>
