@@ -26,4 +26,4 @@ class CreateProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['telefon','město','ulice','PCS','fotka']
+        fields = ['phone_number','city','street','PCS','image']

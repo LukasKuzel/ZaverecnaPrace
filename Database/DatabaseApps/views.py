@@ -72,6 +72,7 @@ def index(request):
     books = Book.objects.all()
     authors = Author.objects.all()
     genres = Genre.objects.all()
+    nation = Nation.objects.all()
     quizs = Quiz.objects.all()
 
 
@@ -79,6 +80,7 @@ def index(request):
         'books':books,
         'authors':authors,
         'genres':genres,
+        'nation':nation,
         'quizs':quizs,
 
     }

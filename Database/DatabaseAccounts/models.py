@@ -10,12 +10,12 @@ def profile_images(instance, filename):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
-    věk = models.IntegerField(null=True, blank=True)
-    telefon = models.CharField(max_length=12,null=True, blank=True)
-    město = models.CharField(max_length=250, null=True, blank=True)
-    ulice = models.CharField(max_length=250, null=True, blank=True)
+    age = models.IntegerField(null=True, blank=True)
+    phone_number = models.CharField(max_length=12,null=True, blank=True)
+    city = models.CharField(max_length=250, null=True, blank=True)
+    street = models.CharField(max_length=250, null=True, blank=True)
     PCS = models.CharField(max_length=250, null=True, blank=True)
-    fotka = models.ImageField(upload_to=profile_images, blank=True)
+    image = models.ImageField(upload_to=profile_images, blank=True)
     timestamp = models.DateTimeField
 
     @receiver(post_save, sender=User)
@@ -27,4 +27,13 @@ class Profile(models.Model):
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
 
-
+#Úprava ADMIN panelu
+#class CustomUserAdmin(UserAdmin):
+    # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
+    # overrides get_fieldsets to use this attribute when creating a user.
+    #add_fieldsets = (
+        #(None, {
+            #'classes': ('wide',),
+            #'fields': ('username', 'email', 'password1', 'password2'),
+        #}),
+    #)

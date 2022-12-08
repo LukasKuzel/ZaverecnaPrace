@@ -9,6 +9,11 @@ def poster_book_path(instance, filename):
 def poster_author_path(instance, filename):
     return "author/" + str(instance.id) + "/author_poster/" + filename
 
+#Kvůli času narychlo udělaná třída. Ještě budu upravovat + to birthdate a death date
+class Nation(models.Model):
+    state = models.CharField(max_length=250, verbose_name="State")
+    city = models.CharField(max_length=250, verbose_name="City")
+
 
 class Genre(models.Model):
     name = models.CharField(max_length=60, unique=True)
@@ -29,19 +34,19 @@ class Quiz_question(models.Model):
 
 
 class Quiz(models.Model):
-    id = models.BigAutoField(primary_key=True)
     quizQuestion = models.ManyToManyField(Quiz_question)
     delete1 = models.ForeignKey(Quiz_question, on_delete=models.CASCADE, related_name='delete_question')
 
 
 class Author(models.Model):
-    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=250, unique=False, verbose_name="Name")
     surname = models.CharField(max_length=250, unique=False, verbose_name="Surname")
-    nation = models.CharField(max_length=100, verbose_name="Nation", null=True)
-    birthdate = models.CharField(max_length=100, verbose_name="Age", null=True)
+    nation = models.ManyToManyField(Nation)
+    birthdate = models.CharField(max_length=100, verbose_name="birthdate", null=True)
+    deathdate = models.CharField(max_length=100, verbose_name="death date", null=True)
     photo = models.ImageField(upload_to=poster_author_path, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
+
 
     class Meta:
         ordering = ["name"]
@@ -51,7 +56,6 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=250, verbose_name="Title")
     rate = models.FloatField(default=0, validators=[MinValueValidator(1), MaxValueValidator(100)], blank=True,
                              null=True, help_text="Enter between 1 - 100")
@@ -68,7 +72,6 @@ class Book(models.Model):
 
 
 class Review(models.Model):
-    id = models.BigAutoField(primary_key=True)
     text = models.TextField
     rate = models.FloatField(default=0, validators=[MinValueValidator(1), MaxValueValidator(5)], blank=True,
                              null=True, help_text="Enter between 1 - 5")
