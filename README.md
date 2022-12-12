@@ -48,7 +48,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 6.12. Login/Register-If statements (3h)
 - 8.12. Login/Register-If login/forms (2h 30m)
 - 10.12. Login/Register- Everyching changed (5h)
-- 12.12. Login/Register- Making funcional(Login with email)
+- 12.12. Login/Register- Making funcional(Login with email) (2h)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
