@@ -64,6 +64,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://www.tangowithdjango.com/book17/chapters/login.html |
 | https://dontrepeatyourself.org/post/django-custom-user-model-extending-abstractuser/ |
 | https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#proxy | 
+| https://www.youtube.com/watch?v=F6qUfnqZFAE |
 
 ### Zdroje
 | Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
