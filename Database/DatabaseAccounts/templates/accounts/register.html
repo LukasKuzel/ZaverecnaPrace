@@ -11,38 +11,20 @@
                     {% csrf_token %}
                     <div class="containerRegister">
                         <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Register</h2>
-                        <table>
-                            <tr>
-                                <td>Uživatelské jméno:</td>
-                                <td>{{ user_forms.username }}</td>
-                            </tr>
-                            <tr>
-                                <td>Jméno:</td>
-                                <td>{{ user_forms.first_name }}</td>
-                            </tr>
-                            <tr>
-                                <td>Příjmení:</td>
-                                <td>{{ user_forms.last_name }}</td>
-                            </tr>
-                            <tr>
-                                <td>Email:</td>
-                                <td>{{ user_forms.email }}</td>
-                            </tr>
-                            <tr>
-                                <td>Heslo:</td>
-                                <td>{{ user_forms.password1 }}</td>
-                            </tr>
-                            <tr>
-                                <td>Potvrzení hesla:</td>
-                                <td>{{ user_forms.password2 }}</td>
-                            </tr>
-                        </table>
-                        <table>
-                            <tr>
-                                <td>Obrázek:</td>
-                                <td>{{ user_forms.image}}</td>
-                            </tr>
-                        </table>
+                         {% for error in user_forms.username.errors %}<p style="color: red">{{ error }}</p>{% endfor %}
+                        <p>Přezdívka:</p>
+                        <p>{{ user_forms.username }}</p>
+                        <p>Email:</p>
+                        {% for error2 in user_forms.email.errors %}<p style="color: red">{{ error2 }}</p>{% endfor %}
+                        <p>{{ user_forms.email }}</p>
+                        <p>Křestní jméno:</p>
+                        <p>{{ user_forms.first_name }}</p>
+                        <p>Příjmení:</p>
+                        <p>{{ user_forms.last_name }}</p>
+                        <p>Heslo:</p>
+                        <p>{{ user_forms.password1 }}</p>
+                        <p>Znovu heslo:</p>
+                        <p>{{ user_forms.password2 }}</p>
                         <p></p>
                     <input type="submit" value="Register" class="registerButton">
                         <ul class="messagesMid">

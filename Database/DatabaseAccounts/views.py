@@ -1,11 +1,15 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.urls import reverse_lazy
+from django.views import generic
+from django.utils.translation import gettext_lazy as _
 
+from . import forms
+from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword
 from .models import Profile
-from .forms import CreateUserForm, MyAuthenticationForm
-from django.contrib.auth.decorators import login_required
 
 
 def register_view(request):
@@ -36,8 +40,6 @@ def register_view(request):
             user_forms = CreateUserForm
 
 
-
-
         PoslatVen2 = {
             'user_forms':user_forms,
             'registered':registered
@@ -62,9 +64,9 @@ def login_view(request):
                     login(request, user)
                     return redirect('index')
                 else:
-                    messages.error(request, 'Špatné jméno nebo heslo')
+                    pass
             else:
-                messages.error(request, 'Špatné jméno nebo heslo')
+                pass
         else:
             forms = MyAuthenticationForm()
 
@@ -81,4 +83,36 @@ def logout_view(request):
     if request.method == 'POST':
         logout(request)
         return redirect('index')
+
+
+class edit_view(generic.UpdateView):
+    form_class = MyEditForm
+    template_name = 'accounts/edit.html'
+    success_url = reverse_lazy('index')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        if Profile.object.filter(username=username).exists():
+            raise forms.ValidationError(_("Tato přezdívka se již používá."))
+        return username
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if Profile.object.filter(email=email).exists():
+            raise forms.ValidationError(_("Tento email se již používá."))
+        return email
+
+
+class edit_password_view(generic.UpdateView):
+    form_class = MyEditFormPassword
+    template_name = 'accounts/password.html'
+    success_url = reverse_lazy('login')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
 

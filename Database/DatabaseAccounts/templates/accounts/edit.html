@@ -5,22 +5,36 @@
     <div class="containerLoginTextMain">
         <div class="containerLoginText">
             <div class="containerLogin">
-                <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Edit</h2>
-                <img class="profile-pic" src="{{ request.user.image.url }}">
-                <form class="site-form" action="{% url 'login' %}" method="post">
+                <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Upráva profilu</h2>
+                <form class="site-form" action="{% url 'edit' %}" method="post">
                     {% csrf_token %}
-                    <table>
-                        <tr>
-                            <td>Email: </td>
-                            <td>{{ forms.email }}</td>
-                        </tr>
-                        <tr>
-                            <td>Heslo: </td>
-                            <td>{{ forms.password}}</td>
-                        </tr>
-                    </table>
-                    <p></p>
-                    <input type="submit" value="Login" class="registerButton">
+                    <p>Profilová fotka</p>
+                    <p>{{ form.image }}</p>
+                    <p>Přezdívka:</p>
+                    {% for error in form.username.errors %}<p style="color: red">{{ error }}</p>{% endfor %}
+                    <p>{{ form.username }}</p>
+                    <p>Email:</p>
+                    {% for error2 in form.email.errors %}<p style="color: red">{{ error2 }}</p>{% endfor %}
+                    <p>{{ form.email }}</p>
+                    <p>Křestní jméno:</p>
+                    <p>{{ form.first_name }}</p>
+                    <p>Příjmení:</p>
+                    <p>{{ form.last_name }}</p>
+                    <p>Město:</p>
+                    <p>{{ form.city }}</p>
+                    <p>Ulice:</p>
+                    <p>{{ form.street }}</p>
+                    <p>PCS:</p>
+                    <p>{{ form.PCS }}</p>
+                    <p>Telefonní číslo:</p>
+                    <p>{{ form.phone_number }}</p>
+                    <p>Věk:</p>
+                    <p>{{ form.age }}</p>
+                    <p>O tobě:</p>
+                    <p>{{ form.about }}</p>
+                    <p>Změna hesla:</p>
+                    <p><a href="{% url 'password' %}">Nové heslo</a></p>
+                    <input type="submit" value="Edit" class="registerButton">
                 </form>
                 <ul class="messagesMid">
                     {% for message in messages %}

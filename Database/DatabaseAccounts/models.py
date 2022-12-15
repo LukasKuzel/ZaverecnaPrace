@@ -43,12 +43,12 @@ class Profile(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
     age = models.IntegerField(null=True, blank=True)
-    phone_number = models.CharField(max_length=12, blank=True)
-    city = models.CharField(max_length=250, blank=True)
-    street = models.CharField(max_length=250, blank=True)
-    PCS = models.CharField(max_length=250, blank=True)
+    phone_number = models.CharField(max_length=12, blank=True, null=True)
+    city = models.CharField(max_length=250, blank=True, null=True)
+    street = models.CharField(max_length=250, blank=True, null=True)
+    PCS = models.CharField(max_length=250, blank=True, null=True)
     image = models.ImageField(upload_to=profile_images, blank=True, null=True)
-    about = models.TextField(_('about'), max_length=1000, blank=True)
+    about = models.TextField(_('about'), max_length=1000, blank=True, null=True)
     #last_login = models.DateTimeField(default=timezone)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -61,13 +61,3 @@ class Profile(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.username
 
-
-class PersonalInfo(models.Model):
-    userP = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    age = models.IntegerField(null=True, blank=True)
-    phone_number = models.CharField(max_length=12, blank=True)
-    city = models.CharField(max_length=250, blank=True)
-    street = models.CharField(max_length=250, blank=True)
-    PCS = models.CharField(max_length=250, blank=True)
-    image = models.ImageField(upload_to=profile_images, blank=True)
-    about = models.TextField(_('about'), max_length=1000, blank=True)
