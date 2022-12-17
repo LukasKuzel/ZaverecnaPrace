@@ -10,7 +10,7 @@
         </ul>
         <ul class="ulRight">
             {% if user.is_authenticated %}
-                <span><a href="{% url 'edit' %}" class="logoutButton">{{ request.user }}</a></span>
+                <span><a href="{% url 'profile' %}" class="avatar_pButton"><img class="avatar_p" src="{{ request.user.image.url }}"></a></span>
                 <li class="lomitkoRight">/</li>
                 <li><form class="logout-link" action="{% url 'logout' %}" method="post">
                 {% csrf_token %}

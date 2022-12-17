@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from django.utils.translation import gettext_lazy as _
+from django.views.generic import DetailView, ListView
 
 from . import forms
 from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword
@@ -88,7 +89,7 @@ def logout_view(request):
 class edit_view(generic.UpdateView):
     form_class = MyEditForm
     template_name = 'accounts/edit.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('profile')
 
     def get_object(self, queryset=None):
         return self.request.user
@@ -113,6 +114,16 @@ class edit_password_view(generic.UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+
+def profile_detail(request):
+    profile = Profile.object.filter(id=request.user.id).first()
+
+    PoslatVen = {
+        'profile':profile,
+    }
+
+    return render(request, 'accounts/profile.html', context=PoslatVen)
 
 
 

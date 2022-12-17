@@ -46,6 +46,7 @@ class Author(models.Model):
     deathdate = models.CharField(max_length=100, verbose_name="death date", null=True)
     photo = models.ImageField(upload_to=poster_author_path, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
+    nation = models.ManyToManyField(Nation)
 
 
     class Meta:

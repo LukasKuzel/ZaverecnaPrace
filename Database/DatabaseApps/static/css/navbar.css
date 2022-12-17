@@ -65,3 +65,29 @@ ul li a:hover {
   font-size: 20px;
   text-align: right;
 }
+
+.avatar_p {
+  max-height: 50px !important;
+  max-width: 50px !important;
+  border-radius: 20px !important;
+}
+
+.avatar_pButton{
+    background-color: black;
+    border: 2px;
+    border-radius: 20px;
+    color: white;
+    padding: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 2px;
+    cursor: pointer;
+    transition-duration: 0s;
+}
+
+.avatar_pButton:hover{
+    background-color: white;
+    color: darkslategrey;
+}

@@ -1,0 +1,27 @@
+{% extends "base2.html" %}
+
+{% block content %}
+<hr class="lineHere">
+    <div class="containerLoginTextMain">
+        <div class="containerLoginText">
+            <div class="containerLogin">
+                <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Profil</h2>
+                    <p>Profilová fotka</p>
+                    <p><img src="{{ profile.image.url }}" alt="fotka" class="cardImage"></p>
+                    <p>Přezdívka: {{ profile.username}}</p>
+                    <p>Email: {{ profile.email }}</p>
+                    <p>Křestní jméno: {{ profile.first_name }}</p>
+                    <p>Příjmení: {{ profile.last_name }}</p>
+                    <p>Město: {{ profile.city }}</p>
+                    <p>Ulice: {{ profile.street }}</p>
+                    <p>PCS: {{ profile.PCS }}</p>
+                    <p>Telefonní číslo: {{ profile.phone_number }}</p>
+                    <p>Věk: {{ profile.age }}</p>
+                    <p>O tobě: </p>
+                    <div class="text-break" style="background-color: white; border-radius: 2px; color: black; padding-left: 4px;"><p>{{ profile.about}}</p></div>
+                    <p></p>
+                    <p>Změň údaje: <a href="{% url 'edit' %}">Změnit</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

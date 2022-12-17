@@ -6,10 +6,10 @@
         <div class="containerLoginText">
             <div class="containerLogin">
                 <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Upráva profilu</h2>
-                <form class="site-form" action="{% url 'edit' %}" method="post">
+                <form class="site-form" action="{% url 'edit' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <p>Profilová fotka</p>
-                    <p>{{ form.image }}</p>
+                    <p class="text-break">{{ form.image }}</p>
                     <p>Přezdívka:</p>
                     {% for error in form.username.errors %}<p style="color: red">{{ error }}</p>{% endfor %}
                     <p>{{ form.username }}</p>
@@ -32,8 +32,8 @@
                     <p>{{ form.age }}</p>
                     <p>O tobě:</p>
                     <p>{{ form.about }}</p>
-                    <p>Změna hesla:</p>
-                    <p><a href="{% url 'password' %}">Nové heslo</a></p>
+                    <p>Změna hesla: <a href="{% url 'password' %}">Nové heslo</a></p>
+                    <p></p>
                     <input type="submit" value="Edit" class="registerButton">
                 </form>
                 <ul class="messagesMid">
