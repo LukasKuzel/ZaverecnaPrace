@@ -50,6 +50,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 10.12. Login/Register- Everyching changed (5h)
 - 12.12. Login/Register- Making funcional(Login with email) (2h)
 - 15.12. Profile Edit (8h 30m)
+- 17.12. Profile (2h 30m)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
