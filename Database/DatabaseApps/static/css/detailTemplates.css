@@ -9,7 +9,7 @@
 }
 
 .detailText {
-  color: black;
+  color: white;
   padding: 20px;
   background-color: darkslategrey;
 }
@@ -38,4 +38,10 @@
   color: white;
   text-decoration: none;
   padding-left: 40px;
+}
+
+.reviewDetail{
+  margin-top: 60px;
+  margin-left: 150px;
+  margin-right: 150px;
 }

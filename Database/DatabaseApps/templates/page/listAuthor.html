@@ -11,7 +11,7 @@
                   <img src="{{ author.photo.url }}" alt="fotka" class="cardImage">
                   <div class="containerCard">
                     <h4><b>{{ author.name}} {{ author.surname }}</b></h4>
-                      <p>{{ author.birthdate }}</p>
+                      <p>{{ author.birthdate }} - {{ author.deathdate }}</p>
                   </div>
                  <a class="buttonBlue" href="{% url 'authordetail' author.pk %}">Podrobnosti</a>
                 </div>

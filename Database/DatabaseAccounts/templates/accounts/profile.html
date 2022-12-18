@@ -7,7 +7,11 @@
             <div class="containerLogin">
                 <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Profil</h2>
                     <p>Profilová fotka</p>
-                    <p><img src="{{ profile.image.url }}" alt="fotka" class="cardImage"></p>
+                    {% if request.user.image%}
+                        <p><img src="{{ profile.image.url }}" alt="fotka" class="cardImage"></p>
+                    {% else %}
+                        <p style="color: red">Profilová fotka nebyla nastavena</p>
+                    {% endif %}
                     <p>Přezdívka: {{ profile.username}}</p>
                     <p>Email: {{ profile.email }}</p>
                     <p>Křestní jméno: {{ profile.first_name }}</p>
@@ -21,6 +25,10 @@
                     <div class="text-break" style="background-color: white; border-radius: 2px; color: black; padding-left: 4px;"><p>{{ profile.about}}</p></div>
                     <p></p>
                     <p>Změň údaje: <a href="{% url 'edit' %}">Změnit</a></p>
+                    {% if user.is_superuser or user.is_staff%}
+                        <p></p>
+                        <p><a href="{% url 'admin:index' %}">Úprava databáze</a></p>
+                    {% endif %}
             </div>
         </div>
     </div>

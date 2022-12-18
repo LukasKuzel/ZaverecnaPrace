@@ -10,5 +10,5 @@ urlpatterns = [
     path('profile/', views.profile_detail, name='profile'),
     path('edit/', edit_view.as_view(), name='edit'),
     path('password/', edit_password_view.as_view(), name='password'),
-
+    path('review/<int:book_id>/', views.submitReview, name='review')
 ]

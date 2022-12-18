@@ -1,15 +1,13 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import DetailView, ListView
 
+from DatabaseApps.models import Review
 from . import forms
-from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword
+from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword, ReviewForm
 from .models import Profile
 
 
@@ -124,6 +122,35 @@ def profile_detail(request):
     }
 
     return render(request, 'accounts/profile.html', context=PoslatVen)
+
+def submitReview(request, book_id):
+    url = request.META.get('HTTP_REFERER')
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            try:
+                reviews = Review.objects.get(user__id=request.user.id, book__id=book_id)
+                form_review = ReviewForm(request.POST, instance=reviews)
+                form_review.save()
+                messages.success(request, 'Thank you! Your review has been updated.')
+                return redirect(url)
+            except:
+                form_review = ReviewForm(request.POST)
+                if form_review.is_valid():
+                    data = Review()
+                    data.text = form_review.cleaned_data['text']
+                    data.rate = form_review.cleaned_data['rate']
+                    data.ip = request.META.get('REMOTE_ADDR')
+                    data.book_id = book_id
+                    data.user_id = request.user.id
+                    data.save()
+                    messages.success(request, 'Thank you! Your review has been created.')
+                    return redirect(url)
+
+        PoslatVen = {
+            'form_review': form_review,
+        }
+
+        return render(request, 'page/detailBook.html', context=PoslatVen)
 
 
 

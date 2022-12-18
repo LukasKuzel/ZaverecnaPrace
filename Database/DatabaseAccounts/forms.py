@@ -1,10 +1,10 @@
-from django.contrib.auth import password_validation, authenticate
-from django.forms import ModelForm
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
+from django.contrib.auth import authenticate
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User
 from django import forms
-from .models import Profile, User
+
+from DatabaseApps.models import Review
+from .models import Profile
 
 
 class CreateUserForm(UserCreationForm):
@@ -79,3 +79,8 @@ class MyEditFormPassword(UserCreationForm):
         model = Profile
         fields = ['password1','password2']
 
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['text','rate']
