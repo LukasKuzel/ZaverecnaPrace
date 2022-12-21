@@ -52,6 +52,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 15.12. Profile Edit (8h 30m)
 - 17.12. Profile (2h 30m)
 - 18.12. Review (4h)
+- 21.12. Review (9h)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
@@ -69,6 +70,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#proxy | 
 | https://www.youtube.com/watch?v=F6qUfnqZFAE |
 | https://www.youtube.com/watch?v=R6-pB5PAA6s |
+| https://stackoverflow.com/questions/39652109/django-filtering-inside-of-get-context-data |
 
 ### Zdroje
 | Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
