@@ -1,4 +1,5 @@
 {% extends "base2.html" %}
+{% load static %}
 
 {% block content %}
 <hr class="lineHere">
@@ -10,7 +11,7 @@
                     {% if request.user.image%}
                         <p><img src="{{ profile.image.url }}" alt="fotka" class="cardImage"></p>
                     {% else %}
-                        <p style="color: red">Profilová fotka nebyla nastavena</p>
+                        <p><img src="{% static '../static/img/default-avatar.png' %}" alt="fotka" class="cardImage"></p>
                     {% endif %}
                     <p>Přezdívka: {{ profile.username}}</p>
                     <p>Email: {{ profile.email }}</p>

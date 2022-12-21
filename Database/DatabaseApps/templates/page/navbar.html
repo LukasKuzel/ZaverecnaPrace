@@ -1,3 +1,4 @@
+{% load static %}
 <nav class="navbar">
         <ul class="ulLeft">
             <div class="logoLeft"><a>PČ</a></div>
@@ -13,7 +14,7 @@
                 {% if request.user.image %}
                     <span><a href="{% url 'profile' %}" class="avatar_pButton"><img class="avatar_p" src="{{ request.user.image.url }}"></a></span>
                 {% else %}
-                    <span><a href="{% url 'profile' %}" class="logoutButton">{{ request.user.username }}</a></span>
+                    <span><a href="{% url 'profile' %}" class="avatar_pButton"><img class="avatar_p" src="{% static '../static/img/default-avatar.png' %}"></a></span>
                 {% endif %}
                 <li class="lomitkoRight">/</li>
                 <li><form class="logout-link" action="{% url 'logout' %}" method="post">

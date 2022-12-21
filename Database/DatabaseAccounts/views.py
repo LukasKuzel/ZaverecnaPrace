@@ -1,18 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.template import loader
 from django.urls import reverse_lazy
 from django.views import generic
 from django.utils.translation import gettext_lazy as _
+from django.views.generic import ListView
 
-from DatabaseApps.models import Review
+from DatabaseApps.models import Review, Book
 from . import forms
 from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword, ReviewForm
 from .models import Profile
 
 
 def register_view(request):
-    registered = False
     if request.user.is_authenticated:
         return redirect('index')
     else:
@@ -30,7 +31,6 @@ def register_view(request):
                 login(request, user)
                 messages.success(request, 'Účet byl vytvořen pro ' + username)
                 return redirect('index')
-                registered = True
 
             else:
                 print(user_forms.errors)
@@ -41,7 +41,6 @@ def register_view(request):
 
         PoslatVen2 = {
             'user_forms':user_forms,
-            'registered':registered
 
         }
 
@@ -131,7 +130,7 @@ def submitReview(request, book_id):
                 reviews = Review.objects.get(user__id=request.user.id, book__id=book_id)
                 form_review = ReviewForm(request.POST, instance=reviews)
                 form_review.save()
-                messages.success(request, 'Thank you! Your review has been updated.')
+                messages.success(request, 'Vaše recenze byla aktualizována.')
                 return redirect(url)
             except:
                 form_review = ReviewForm(request.POST)
@@ -143,14 +142,7 @@ def submitReview(request, book_id):
                     data.book_id = book_id
                     data.user_id = request.user.id
                     data.save()
-                    messages.success(request, 'Thank you! Your review has been created.')
+                    messages.success(request, 'Vaše recenze byla vytvořena.')
                     return redirect(url)
-
-        PoslatVen = {
-            'form_review': form_review,
-        }
-
-        return render(request, 'page/detailBook.html', context=PoslatVen)
-
 
 

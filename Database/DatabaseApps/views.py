@@ -1,3 +1,5 @@
+from django.db.models import Avg
+from django.db.models.functions import Round
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -52,6 +54,8 @@ class BookDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['review5'] = Review.objects.all().filter(book__id=self.kwargs['pk'], status=True)
+        context['aggregates'] = Review.objects.all().filter(book__id=self.kwargs['pk']).aggregate(Avg('rate'))
         if 'genre_name' in self.kwargs:
             context['view_title'] = f"ŽÁNR: {self.kwargs['genre_name']}"
             context['view_head'] = f"ŽÁNR KNIH: {self.kwargs['genre_name']}"
@@ -65,7 +69,6 @@ class AuthorDetailView(DetailView):
     model = Author
     context_object_name = 'authors_detail'
     template_name = 'page/detailAuthor.html'
-
 
 
 def index(request):
@@ -82,10 +85,10 @@ def index(request):
         'genres':genres,
         'nation':nation,
         'quizs':quizs,
-
     }
 
     return render(request, 'index.html', context=PoslatVen)
+
 
 
 

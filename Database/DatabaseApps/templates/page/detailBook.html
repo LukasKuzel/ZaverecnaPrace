@@ -1,4 +1,5 @@
 {% extends "base2.html" %}
+{% load static %}
 
 {% block content %}
     <hr class="lineHere">
@@ -7,7 +8,7 @@
         <div class="containerDetail">
             <div class="detailText">
                 <h3>{{ books_detail.name }}</h3>
-                <h3>{{ books_detail.rate }}</h3>
+                <h4>Hodnocení: {{ aggregates.rate__avg|floatformat }}/5</h4>
                 {% if books_detail.photo %}
                     <a href="{{ books_detail.photo.url }}"><img src="{{ books_detail.photo.url }}" class="photoDetail"></a>
                 {% endif %}
@@ -27,7 +28,7 @@
                     <p>Napiš recenzi</p>
                     <textarea style="padding-left: 4px" rows="6" name="text" class="form-control" required></textarea>
                     <p></p>
-                    <label>Rate:</label>
+                    <label>Hodnocení:</label>
                     <p></p>
                     <div class="rate">
                         <input type="radio" name="rate" id="rating10" value="5" required><label for="rating10" title="5"></label>
@@ -46,11 +47,24 @@
                 </div>
                 {% endif %}
                 <p></p>
-                <div>
-                    <h5>Recenze: </h5>
-                    <p>{{ form_review.text }}</p>
-                </div>
+            </form>
+            <div>
+                <h4>Recenze: </h4>
+                {% for review in review5%}
+                    {% if review.user.image %}
+                        <img style="max-height: 20px; max-width: 20px; border-radius: 20px" src="{{ review.user.image.url }}">
+                    {% else %}
+                        <img style="max-height: 20px; max-width: 20px; border-radius: 20px" src="{% static '../static/img/default-avatar.png' %}">
+                    {% endif %}
+                    {{ review.user }} - Hodnocení: <i style="color: #ffb503" class="fa fa-star{% if review.rate < 0.5%}-o empty{% elif review.rate >= 0.5 and review.rate < 1 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 1.5%}-o empty{% elif review.rate >= 1.5 and review.rate < 2 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 2.5%}-o empty{% elif review.rate >= 2.5 and review.rate < 3 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 3.5%}-o empty{% elif review.rate >= 3.5 and review.rate < 4 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 4.5%}-o empty{% elif review.rate >= 4.5 and review.rate < 5 %}-half-o empty{% endif %}" aria-hidden="true"></i> - Vytvořeno: {{ review.created_date }} - Upraveno: {{ review.updated_date }}
+                    <p></p>
+                    <p>{{ review.text }}</p>
+                {% endfor %}
+            </div>
         </div>
-
     </div>
 {% endblock %}

@@ -55,15 +55,15 @@ class MyAuthenticationForm(forms.Form):
 
 
 class MyEditForm(UserChangeForm):
-    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}), disabled=True)
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control'}))
     city = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     street = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    PCS = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control'}))
-    phone_number = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control'}))
-    age = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control'}))
+    PCS = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type':'number', 'min':'0'}))
+    phone_number = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type':'number', 'min':'0'}))
+    age = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type':'number', 'min':'0'}))
     about = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
