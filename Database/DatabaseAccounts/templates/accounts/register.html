@@ -25,15 +25,9 @@
                         <p>{{ user_forms.password1 }}</p>
                         <p>Znovu heslo:</p>
                         <p>{{ user_forms.password2 }}</p>
+                        {% for error in user_forms.password2.errors%}<p style="color: red">{{ error }}</p>{% endfor %}
                         <p></p>
                     <input type="submit" value="Register" class="registerButton">
-                        <ul class="messagesMid">
-                        {% for message in messages %}
-                            {% if message %}
-                                <li class="messages">{{ message }}</li>
-                            {% endif %}
-                        {% endfor %}
-                        </ul>
                     </div>
                 </form>
 

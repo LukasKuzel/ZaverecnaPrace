@@ -48,6 +48,11 @@
                 {% endif %}
                 <p></p>
             </form>
+                <ul class="messagesMid">
+                {% for message in messages %}
+                    <li class="messages2">{{ message }}</li>
+                {% endfor %}
+                </ul>
             <div>
                 <h4>Recenze: </h4>
                 {% for review in review5%}

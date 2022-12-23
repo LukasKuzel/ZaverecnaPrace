@@ -11,10 +11,9 @@
                     <p>Profilová fotka</p>
                     <p class="text-break">{{ form.image }}</p>
                     <p>Přezdívka:</p>
-                    {% for error in form.username.errors %}<p style="color: red">{{ error }}</p>{% endfor %}
                     <p>{{ form.username }}</p>
                     <p>Email:</p>
-                    {% for error2 in form.email.errors %}<p style="color: red">{{ error2 }}</p>{% endfor %}
+                    {% for error2 in form.email.errors %}<p style="color: red">Tento email se již používá.</p><p style="color: red">Email musí být ve formátu: 'example@example.cz'</p>{% endfor %}
                     <p>{{ form.email }}</p>
                     <p>Křestní jméno:</p>
                     <p>{{ form.first_name }}</p>
@@ -25,8 +24,10 @@
                     <p>Ulice:</p>
                     <p>{{ form.street }}</p>
                     <p>PCS:</p>
+                    {% for error3 in form.PCS.errors %}<p style="color: red">PCS musí být ve formátu: '99999'</p>{% endfor %}
                     <p>{{ form.PCS }}</p>
                     <p>Telefonní číslo:</p>
+                    {% for error4 in form.phone_number.errors %}<p style="color: red">Telefonní číslo musí být ve formátu: '999999999'.</p>{% endfor %}
                     <p>{{ form.phone_number }}</p>
                     <p>Věk:</p>
                     <p>{{ form.age }}</p>

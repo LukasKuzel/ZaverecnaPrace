@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django import forms
 
@@ -40,6 +41,13 @@ class CreateUserForm(UserCreationForm):
             raise forms.ValidationError(_("Tento email se již používá."))
         return email
 
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError(_("Hesla se neshodují"))
+        return password2
+
 
 class MyAuthenticationForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"autofocus": True, 'class': 'form-control'}))
@@ -50,7 +58,7 @@ class MyAuthenticationForm(forms.Form):
         password = self.cleaned_data.get('password')
         user = authenticate(email=email, password=password)
         if not user:
-            raise forms.ValidationError("Špatný email nebo heslo.")
+            raise forms.ValidationError(_("Špatný email nebo heslo."))
 
 
 
@@ -79,6 +87,12 @@ class MyEditFormPassword(UserCreationForm):
         model = Profile
         fields = ['password1','password2']
 
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError(_("Hesla se neshodují"))
+        return password2
 
 class ReviewForm(forms.ModelForm):
     class Meta:

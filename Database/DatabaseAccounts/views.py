@@ -34,7 +34,6 @@ def register_view(request):
 
             else:
                 print(user_forms.errors)
-                messages.error(request, 'Něco nebylo zadáno správně. Zkuste to prosím znovu.')
         else:
             user_forms = CreateUserForm
 
@@ -91,18 +90,6 @@ class edit_view(generic.UpdateView):
     def get_object(self, queryset=None):
         return self.request.user
 
-    def clean_username(self):
-        username = self.cleaned_data.get('username')
-        if Profile.object.filter(username=username).exists():
-            raise forms.ValidationError(_("Tato přezdívka se již používá."))
-        return username
-
-    def clean_email(self):
-        email = self.cleaned_data.get('email')
-        if Profile.object.filter(email=email).exists():
-            raise forms.ValidationError(_("Tento email se již používá."))
-        return email
-
 
 class edit_password_view(generic.UpdateView):
     form_class = MyEditFormPassword
@@ -115,12 +102,15 @@ class edit_password_view(generic.UpdateView):
 
 def profile_detail(request):
     profile = Profile.object.filter(id=request.user.id).first()
+    review5 = Review.objects.all().filter(user__id=request.user.id)
 
     PoslatVen = {
         'profile':profile,
+        'review5':review5,
     }
 
     return render(request, 'accounts/profile.html', context=PoslatVen)
+
 
 def submitReview(request, book_id):
     url = request.META.get('HTTP_REFERER')
@@ -146,3 +136,7 @@ def submitReview(request, book_id):
                     return redirect(url)
 
 
+def delete(request, book_id):
+  review6 = Review.objects.get(user__id=request.user.id, book__id=book_id)
+  review6.delete()
+  return redirect('profile')

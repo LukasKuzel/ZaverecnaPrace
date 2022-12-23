@@ -2,6 +2,7 @@ from datetime import timezone
 
 from django.conf import settings
 from django.contrib.auth.models import User, AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.core.validators import RegexValidator
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -43,10 +44,12 @@ class Profile(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=150, blank=True)
     last_name = models.CharField(max_length=150, blank=True)
     age = models.IntegerField(null=True, blank=True)
-    phone_number = models.CharField(max_length=9, blank=True, null=True)
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9}$')
+    phone_number = models.CharField(validators=[phone_regex], max_length=9, blank=True, null=True)
     city = models.CharField(max_length=250, blank=True, null=True)
     street = models.CharField(max_length=250, blank=True, null=True)
-    PCS = models.CharField(max_length=5, blank=True, null=True)
+    PCS_regex = RegexValidator(regex=r'^\+?1?\d{5}$')
+    PCS = models.CharField(validators=[PCS_regex],max_length=5, blank=True, null=True)
     image = models.ImageField(upload_to=profile_images, blank=True, null=True)
     about = models.TextField(_('about'), max_length=1000, blank=True, null=True)
     #last_login = models.DateTimeField(default=timezone)

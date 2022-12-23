@@ -109,3 +109,15 @@
     color: white;
     padding: 20px;
 }
+
+.messages2 {
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: darkslategray;
+    border-radius: 14px;
+    max-width: 100%;
+    color: white;
+    padding: 20px;
+}
