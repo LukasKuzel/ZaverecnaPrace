@@ -53,6 +53,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 17.12. Profile (2h 30m)
 - 18.12. Review (4h)
 - 21.12. Review (9h)
+- 23.12. Editing(3h)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
