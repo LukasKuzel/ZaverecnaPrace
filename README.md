@@ -75,5 +75,10 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://stackoverflow.com/questions/39652109/django-filtering-inside-of-get-context-data |
 
 ### Zdroje
-| Informace o autorovi: Karel Čapek. Wikipedie [online]. Česko: wikipedie, 2022, 20. 10. 2022 [cit. 2022-10-21]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
+| Informace o autorovi: Karel Čapek. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
+| Informace o knize: Válka s mloky. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Válka_s_Mloky |
+| Informace o knize: RUR. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/R.U.R. |
+| Informace o autorovi: Boris Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Boris_Strugackij |
+| Informace o autorovi: Arkadij Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Arkadij_Strugackij |
+
 | Obrázek Knih [online]. -: -, - [cit. 2022-11-17]. Dostupné z: https://thecommuniquechs.com/2552/opinion/what-is-the-best-book-genre/ |
