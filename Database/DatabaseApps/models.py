@@ -16,28 +16,14 @@ class Nation(models.Model):
     state = models.CharField(max_length=250, verbose_name="State", blank=True)
     city = models.CharField(max_length=250, verbose_name="City", blank=True)
 
+    def __str__(self):
+        return f'{self.state} - {self.city}'
 
 class Genre(models.Model):
     name = models.CharField(max_length=60, unique=True)
 
     def __str__(self):
         return self.name
-
-
-class Quiz_answer(models.Model):
-    answer = models.CharField(max_length=250, verbose_name="Answer")
-    verify = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(1)], null=False, verbose_name="0-false or 1-true")
-
-
-class Quiz_question(models.Model):
-    question = models.CharField(max_length=250, verbose_name="Question")
-    quizAnswer = models.ManyToManyField(Quiz_answer)
-    delete2 = models.ForeignKey(Quiz_answer, on_delete=models.CASCADE, related_name='delete_answers')
-
-
-class Quiz(models.Model):
-    quizQuestion = models.ManyToManyField(Quiz_question)
-    delete1 = models.ForeignKey(Quiz_question, on_delete=models.CASCADE, related_name='delete_question')
 
 
 class Author(models.Model):

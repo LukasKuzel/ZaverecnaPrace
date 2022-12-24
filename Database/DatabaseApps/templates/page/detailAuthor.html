@@ -9,18 +9,23 @@
             <div class="col-10 containerDetail">
                  <div class="card-body">
                  <h3 class="card-title"><b>{{ authors_detail.name }} {{ authors_detail.surname }}</b></h3>
+                 <p></p>
                     <div class="row">
                         <div class="col-3">
                         {% if authors_detail.photo %}
                             <div class="card-body">
                                 <a href="{{ authors_detail.photo.url }}"><img src="{{ authors_detail.photo.url }}" class="card-img"></a>
                             </div>
+                            <p></p>
+                            <div class="card-text">
+                                <p>{{ authors_detail.birthdate }} - {{ authors_detail.deathdate }}</p>
+                            </div>
                         {% endif %}
                         </div>
                         <div class="col-xl-9">
                             <div class="card-body">
                                 <div class="card-text">
-                                    <p class="text-break">{{ authors_detail.bio }}</p>
+                                    <p class="text-break">{{ authors_detail.bio|linebreaks }}</p>
                                 </div>
                             </div>
                         </div>
@@ -28,18 +33,17 @@
                      <p></p>
                      <p>Knihy:</p>
                     <div class="row">
-                        <p>{% for book in authors_detail.book_set.all %}
-                            <div class="col-md-2">
-                                <div class="card" style="background-color: black">
+                        {% for book in authors_detail.book_set.all %}
+                            <div class="col-md-3">
+                                <div class="card2" style="background-color: black">
                                     <div class="card-text booksInAuthors">
                                         <a href="{% url 'bookdetail' book.pk %}" style="color: white">{{ book.name }}</a>
                                     </div>
                                     <p></p>
-                                    <img src="{{ book.photo.url }}" alt="fotka" class="card-img" style="height: 200px;" >
+                                    <img src="{{ book.photo.url }}" alt="fotka" class="card-img2" style="height: 200px;" >
                                 </div>
                             </div>
                         {% endfor %}
-                        </p>
                     </div>
                  </div>
             </div>

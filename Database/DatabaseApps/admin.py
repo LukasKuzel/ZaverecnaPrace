@@ -1,13 +1,20 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Nation)
+
 admin.site.register(Genre)
-admin.site.register(Author)
-admin.site.register(Book)
-admin.site.register(Quiz_answer)
-admin.site.register(Quiz_question)
-admin.site.register(Quiz)
+
+class FilterA(admin.ModelAdmin):
+    search_fields = ('name','surname')
+    list_filter = ('name','surname')
+
+admin.site.register(Author, FilterA)
+
+class FilterB(admin.ModelAdmin):
+    search_fields = ('name','name')
+    list_filter = ('name','name')
+
+admin.site.register(Book,FilterB)
 
 
 class CommentAdmin(admin.ModelAdmin):
@@ -17,3 +24,9 @@ class CommentAdmin(admin.ModelAdmin):
 
 admin.site.register(Review, CommentAdmin)
 
+
+class FilerN(admin.ModelAdmin):
+    search_fields = ('state','city')
+    list_filter = ('state','city')
+
+admin.site.register(Nation, FilerN)

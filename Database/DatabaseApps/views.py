@@ -76,7 +76,6 @@ def index(request):
     authors = Author.objects.all()
     genres = Genre.objects.all()
     nation = Nation.objects.all()
-    quizs = Quiz.objects.all()
 
 
     PoslatVen = {
@@ -84,7 +83,6 @@ def index(request):
         'authors':authors,
         'genres':genres,
         'nation':nation,
-        'quizs':quizs,
     }
 
     return render(request, 'index.html', context=PoslatVen)

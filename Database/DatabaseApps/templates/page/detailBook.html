@@ -31,7 +31,7 @@
                             </div>
                         <div class="col-xl-9">
                             <div class="card-text">
-                                <p class="text-break">{{ books_detail.plot }}</p>
+                                <p class="text-break">{{ books_detail.plot|linebreaks }}</p>
                             </div>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                 <i style="color: #ffb503" class="fa fa-star{% if review.rate < 3.5%}-o empty{% elif review.rate >= 3.5 and review.rate < 4 %}-half-o empty{% endif %}" aria-hidden="true"></i>
                 <i style="color: #ffb503" class="fa fa-star{% if review.rate < 4.5%}-o empty{% elif review.rate >= 4.5 and review.rate < 5 %}-half-o empty{% endif %}" aria-hidden="true"></i> - Vytvořeno: {{ review.created_date }} - Upraveno: {{ review.updated_date }}
                             <p></p>
-                            <p>{{ review.text }}</p>
+                            <p>{{ review.text|linebreaks }}</p>
                         {% endfor %}
                     </div>
                 </div>
