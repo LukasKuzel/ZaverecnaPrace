@@ -82,6 +82,8 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | Informace o autorovi: Arkadij Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Arkadij_Strugackij |
 | Informace o knize: Piknik u cesty. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Piknik_u_cesty |
 | Informace o autorovi: George R. R. Martin. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/George_R._R._Martin |
-|  | 
+| Informace o autorovi: Andrzej Sapkowski. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Andrzej_Sapkowski | 
+| Informace o autorovi: John Ronald Reuel Tolkien. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/John_Ronald_Reuel_Tolkien |
+|  |
 
 | Obrázek Knih [online]. -: -, - [cit. 2022-11-17]. Dostupné z: https://thecommuniquechs.com/2552/opinion/what-is-the-best-book-genre/ |
