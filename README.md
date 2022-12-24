@@ -54,7 +54,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 18.12. Review (4h)
 - 21.12. Review (9h)
 - 23.12. Editing (7h)
-- 24.12. Bootstrap (7h)
+- 24.12. Bootstrap (9h)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
@@ -84,6 +84,8 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | Informace o autorovi: George R. R. Martin. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/George_R._R._Martin |
 | Informace o autorovi: Andrzej Sapkowski. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Andrzej_Sapkowski | 
 | Informace o autorovi: John Ronald Reuel Tolkien. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/John_Ronald_Reuel_Tolkien |
-|  |
+| Informace o knize: Hobit aneb Cesta tam a zase zpátky. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Hobit_aneb_Cesta_tam_a_zase_zpátky |
+| Informace o knize: Hra o trůny. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Hra_o_trůny |
+| Informace o knize: Poslední přání. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Poslední_přání |
 
 | Obrázek Knih [online]. -: -, - [cit. 2022-11-17]. Dostupné z: https://thecommuniquechs.com/2552/opinion/what-is-the-best-book-genre/ |
