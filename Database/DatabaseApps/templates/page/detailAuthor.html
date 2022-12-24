@@ -1,34 +1,49 @@
 {% extends "base2.html" %}
 
 {% block content %}
-    <hr class="lineHere">
-    <div class="containerTextDetail">
+    <hr>
+    <div class="container-xl containerTextDetail">
         <h2 style="text-align: center; padding-top: 1%;text-transform: uppercase">Informace o autorovi</h2>
-        <div class="containerDetail">
-            <div class="detailText">
-                <h3>{{ authors_detail.name }} {{ authors_detail.surname }}</h3>
-                {% if authors_detail.photo %}
-                    <a href="{{ authors_detail.photo.url }}"><img src="{{ authors_detail.photo.url }}" class="photoDetail"></a>
-                {% endif %}
-                <p></p>
-                <div>
-                    {{ authors_detail.bio }}
-                </div>
-                <p></p>
-                <div>
-                    <p>Knihy:</p>
-                    <p>{% for book in authors_detail.book_set.all %}
-                        <div class="row">
-                            <div class="containerDetailAuthorAndBook">
-                                <a href="{% url 'bookdetail' book.pk %}" class="booksInAuthors">{{ book.name }}</a>
-                                <p></p>
-                                <img src="{{ book.photo.url }}" alt="fotka" class="photoDetail">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10 containerDetail">
+                 <div class="card-body">
+                 <h3 class="card-title"><b>{{ authors_detail.name }} {{ authors_detail.surname }}</b></h3>
+                    <div class="row">
+                        <div class="col-3">
+                        {% if authors_detail.photo %}
+                            <div class="card-body">
+                                <a href="{{ authors_detail.photo.url }}"><img src="{{ authors_detail.photo.url }}" class="card-img"></a>
                             </div>
+                        {% endif %}
+                        </div>
+                        <div class="col-xl-9">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <p class="text-break">{{ authors_detail.bio }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    {% endfor %}
-                    </p>
-                </div>
+                     <p></p>
+                     <p>Knihy:</p>
+                    <div class="row">
+                        <p>{% for book in authors_detail.book_set.all %}
+                            <div class="col-md-2">
+                                <div class="card" style="background-color: black">
+                                    <div class="card-text booksInAuthors">
+                                        <a href="{% url 'bookdetail' book.pk %}" style="color: white">{{ book.name }}</a>
+                                    </div>
+                                    <p></p>
+                                    <img src="{{ book.photo.url }}" alt="fotka" class="card-img" style="height: 200px;" >
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </p>
+                    </div>
+                 </div>
             </div>
+            <div class="col-1"></div>
         </div>
     </div>
 {% endblock %}

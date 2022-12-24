@@ -1,37 +1,38 @@
-1 lines (20 sloc)  746 Bytes
-
 {% extends "base2.html"%}
 
 {% block content %}
-<hr class="lineHere">
-    <div class="containerRegisterTextMain">
-        <div>
-            <div class="containerRegisterText">
-                <form class="site-form" action="{% url 'register' %}" method="post">
-                    {% csrf_token %}
-                    <div class="containerRegister">
+<hr>
+    <div class="container-xl containerLoginTextMain">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm-6">
+                <div class="containerLoginText">
+                    <div class="containerLogin">
                         <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Register</h2>
-                         {% for error in user_forms.username.errors %}<p style="color: red">{{ error }}</p>{% endfor %}
-                        <p>Přezdívka:</p>
-                        <p>{{ user_forms.username }}</p>
-                        <p>Email:</p>
-                        {% for error2 in user_forms.email.errors %}<p style="color: red">{{ error2 }}</p>{% endfor %}
-                        <p>{{ user_forms.email }}</p>
-                        <p>Křestní jméno:</p>
-                        <p>{{ user_forms.first_name }}</p>
-                        <p>Příjmení:</p>
-                        <p>{{ user_forms.last_name }}</p>
-                        <p>Heslo:</p>
-                        <p>{{ user_forms.password1 }}</p>
-                        <p>Znovu heslo:</p>
-                        <p>{{ user_forms.password2 }}</p>
-                        {% for error in user_forms.password2.errors%}<p style="color: red">{{ error }}</p>{% endfor %}
-                        <p></p>
-                    <input type="submit" value="Register" class="registerButton">
+                        <form class="site-form" action="{% url 'register' %}" method="post">
+                            {% csrf_token %}
+                            {% for error in user_forms.username.errors %}<p style="color: red">{{ error }}</p>{% endfor %}
+                            <p>Přezdívka:</p>
+                            <p>{{ user_forms.username }}</p>
+                            <p>Email:</p>
+                            {% for error2 in user_forms.email.errors %}<p style="color: red">{{ error2 }}</p>{% endfor %}
+                            <p>{{ user_forms.email }}</p>
+                            <p>Křestní jméno:</p>
+                            <p>{{ user_forms.first_name }}</p>
+                            <p>Příjmení:</p>
+                            <p>{{ user_forms.last_name }}</p>
+                            <p>Heslo:</p>
+                            <p>{{ user_forms.password1 }}</p>
+                            <p>Znovu heslo:</p>
+                            <p>{{ user_forms.password2 }}</p>
+                            {% for error in user_forms.password2.errors%}<p style="color: red">{{ error }}</p>{% endfor %}
+                            <p></p>
+                            <input type="submit" value="Register" class="registerButton">
+                        </form>
                     </div>
-                </form>
-
+                </div>
             </div>
+            <div class="col-3"></div>
         </div>
     </div>
 {% endblock %}

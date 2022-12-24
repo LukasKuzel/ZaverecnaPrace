@@ -2,21 +2,20 @@
   background-image: url("/DatabaseApps/static/img/books.jpg");
 }
 
-.lineHere {
-  display: block;
-  background-color: black;
-  margin-top: -0.01em;
-  margin-bottom: -0.01em;
-  margin-left: auto;
-  margin-right: auto;
-  border-width: 5px;
+.containerOK {
+  margin-top: 40px;
 }
 
-.containerOK {
-  margin-top: 80px;
-  margin-left: 200px;
-  margin-right: 200px;
+hr {
+    background-color: black;
+    margin-top: -0.01em;
+    margin-bottom: -0.01em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 5px;
+    opacity: 100%;
 }
+
 
 .fixedImg {
     background:url("/DatabaseApps/static/img/books.jpg");
@@ -36,15 +35,12 @@
 }
 
 .indexImage{
-    margin-left: 35%;
     height: 300px;
-    border-radius: 20px;
 }
 
 .indexBox{
     color: black;
-    padding-top: 4%;
-    padding-left: 4.8%;
+    padding-bottom: 4%;
 }
 
 a.indexBoxA {
@@ -53,20 +49,40 @@ a.indexBoxA {
 }
 
 .indexBoxContent{
-    width: 280px;
+    width: 220px;
     height: 80px;
     text-transform: uppercase;
-    padding: 6px;
+    padding: 8px;
     position: relative;
     border-radius: 40px;
     border: solid lightgrey;
     background-color: ghostwhite;
 }
 
+
 .indexBoxContent span{
     position: absolute;
     padding-left: 10px;
     padding-top: 20px;
+    text-transform: uppercase;
+}
+
+.indexBoxContent2{
+    width: 220px;
+    height: 80px;
+    text-transform: uppercase;
+    padding: 8px;
+    position: relative;
+    border-radius: 40px;
+    border: solid lightgrey;
+    background-color: ghostwhite;
+}
+
+
+.indexBoxContent2 span{
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 8px;
     text-transform: uppercase;
 }
 
@@ -83,6 +99,11 @@ a.indexBoxA {
     transition: 0.4s;
 }
 
+.indexBoxContent2:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
 
 
 

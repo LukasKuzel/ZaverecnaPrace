@@ -2,74 +2,99 @@
 {% load static %}
 
 {% block content %}
-    <hr class="lineHere">
-    <div class="containerTextDetail">
+    <hr>
+    <div class="container-xl containerTextDetail">
         <h2 style="text-align: center; padding-top: 1%;text-transform: uppercase">Informace o knize</h2>
-        <div class="containerDetail">
-            <div class="detailText">
-                <h3>{{ books_detail.name }}</h3>
-                <h4>Hodnocení: {{ aggregates.rate__avg|floatformat }}/5</h4>
-                {% if books_detail.photo %}
-                    <a href="{{ books_detail.photo.url }}"><img src="{{ books_detail.photo.url }}" class="photoDetail"></a>
-                {% endif %}
-                <p>Napsal: {% for author in books_detail.author.all %}<a href="{% url 'authordetail' author.pk %}" class="card-genre">{{ author.name }} {{ author.surname }}</a>{% endfor %}</p>
-                <p>Žánry: {% for genre in books_detail.genre.all %}<a href="{% url 'bookgenre' genre.name %}" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
-                <p></p>
-                <div>
-                    {{ books_detail.plot }}
-                </div>
-            </div>
-        </div>
-        <div class="reviewDetail">
-            {% if user.is_authenticated %}
-            <form action="{% url 'review' books_detail.id %}" method="post">
-                {% csrf_token %}
-                <div>
-                    <p>Napiš recenzi</p>
-                    <textarea style="padding-left: 4px" rows="6" name="text" class="form-control" required></textarea>
-                    <p></p>
-                    <label>Hodnocení:</label>
-                    <p></p>
-                    <div class="rate">
-                        <input type="radio" name="rate" id="rating10" value="5" required><label for="rating10" title="5"></label>
-                        <input type="radio" name="rate" id="rating9" value="4.5" required><label for="rating9" title="4.5" class="half"></label>
-                        <input type="radio" name="rate" id="rating8" value="4" required><label for="rating8" title="4"></label>
-                        <input type="radio" name="rate" id="rating7" value="3.5" required><label for="rating7" title="3.5" class="half"></label>
-                        <input type="radio" name="rate" id="rating6" value="3" required><label for="rating6" title="3"></label>
-                        <input type="radio" name="rate" id="rating5" value="2.5" required><label for="rating5" title="2.5" class="half"></label>
-                        <input type="radio" name="rate" id="rating4" value="2" required><label for="rating4" title="2"></label>
-                        <input type="radio" name="rate" id="rating3" value="1.5" required><label for="rating3" title="1.5" class="half"></label>
-                        <input type="radio" name="rate" id="rating2" value="1" required><label for="rating2" title="1"></label>
-                        <input type="radio" name="rate" id="rating1" value="0.5" required><label for="rating1" title="0.5" class="half"></label>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10 containerDetail">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h3 class="card-title">{{ books_detail.name }}</h3>
+                        </div>
+                        <div class="col-sm-7"></div>
+                        <div class="col-sm-2">
+                            <h4 class="card-text text-break">Hodnocení: {{ aggregates.rate__avg|floatformat }}/5</h4>
+                        </div>
                     </div>
-                    <p></p>
-                    <input type="submit" value="Hodnotit" class="btn btn-primary">
                 </div>
-                {% endif %}
                 <p></p>
-            </form>
-                <ul class="messagesMid">
-                {% for message in messages %}
-                    <li class="messages2">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            <div>
-                <h4>Recenze: </h4>
-                {% for review in review5%}
-                    {% if review.user.image %}
-                        <img style="max-height: 20px; max-width: 20px; border-radius: 20px" src="{{ review.user.image.url }}">
-                    {% else %}
-                        <img style="max-height: 20px; max-width: 20px; border-radius: 20px" src="{% static '../static/img/default-avatar.png' %}">
-                    {% endif %}
-                    {{ review.user }} - Hodnocení: <i style="color: #ffb503" class="fa fa-star{% if review.rate < 0.5%}-o empty{% elif review.rate >= 0.5 and review.rate < 1 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 1.5%}-o empty{% elif review.rate >= 1.5 and review.rate < 2 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 2.5%}-o empty{% elif review.rate >= 2.5 and review.rate < 3 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 3.5%}-o empty{% elif review.rate >= 3.5 and review.rate < 4 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 4.5%}-o empty{% elif review.rate >= 4.5 and review.rate < 5 %}-half-o empty{% endif %}" aria-hidden="true"></i> - Vytvořeno: {{ review.created_date }} - Upraveno: {{ review.updated_date }}
-                    <p></p>
-                    <p>{{ review.text }}</p>
-                {% endfor %}
+                    <div class="row">
+                        <div class="col-3">
+                            {% if books_detail.photo %}
+                                <a href="{{ books_detail.photo.url }}"><img src="{{ books_detail.photo.url }}" class="card-img"></a>
+                            {% endif %}
+                            <p class="card-text">Napsal: {% for author in books_detail.author.all %}<a href="{% url 'authordetail' author.pk %}" class="card-genre">{{ author.name }} {{ author.surname }}</a>{% endfor %}</p>
+                            <p class="card-text">Žánry: {% for genre in books_detail.genre.all %}<a href="{% url 'bookgenre' genre.name %}" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
+                            <p></p>
+                            </div>
+                        <div class="col-xl-9">
+                            <div class="card-text">
+                                <p class="text-break">{{ books_detail.plot }}</p>
+                            </div>
+                        </div>
+                    </div>
             </div>
+            <div class="col-1"></div>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="reviewDetail">
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'review' books_detail.id %}" method="post">
+                        {% csrf_token %}
+                        <div>
+                            <p>Napiš recenzi</p>
+                            <textarea style="padding-left: 4px" rows="6" name="text" class="form-control" required></textarea>
+                            <p></p>
+                            <label>Hodnocení:</label>
+                            <p></p>
+                            <div class="rate">
+                                <input type="radio" name="rate" id="rating10" value="5" required><label for="rating10" title="5"></label>
+                                <input type="radio" name="rate" id="rating9" value="4.5" required><label for="rating9" title="4.5" class="half"></label>
+                                <input type="radio" name="rate" id="rating8" value="4" required><label for="rating8" title="4"></label>
+                                <input type="radio" name="rate" id="rating7" value="3.5" required><label for="rating7" title="3.5" class="half"></label>
+                                <input type="radio" name="rate" id="rating6" value="3" required><label for="rating6" title="3"></label>
+                                <input type="radio" name="rate" id="rating5" value="2.5" required><label for="rating5" title="2.5" class="half"></label>
+                                <input type="radio" name="rate" id="rating4" value="2" required><label for="rating4" title="2"></label>
+                                <input type="radio" name="rate" id="rating3" value="1.5" required><label for="rating3" title="1.5" class="half"></label>
+                                <input type="radio" name="rate" id="rating2" value="1" required><label for="rating2" title="1"></label>
+                                <input type="radio" name="rate" id="rating1" value="0.5" required><label for="rating1" title="0.5" class="half"></label>
+                            </div>
+                            <p></p>
+                            <input type="submit" value="Hodnotit" class="btn btn-primary">
+                        </div>
+                        {% endif %}
+                        <p></p>
+                    </form>
+                        <ul class="messagesMid">
+                        {% for message in messages %}
+                            <li class="messages2">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    <div>
+                        <h4>Recenze: </h4>
+                        {% for review in review5%}
+                            {% if review.user.image %}
+                                <img style="max-height: 20px; max-width: 20px; border-radius: 20px" src="{{ review.user.image.url }}">
+                            {% else %}
+                                <img style="max-height: 20px; max-width: 20px; border-radius: 20px" src="{% static '../static/img/default-avatar.png' %}">
+                            {% endif %}
+                            {{ review.user }} - Hodnocení: <i style="color: #ffb503" class="fa fa-star{% if review.rate < 0.5%}-o empty{% elif review.rate >= 0.5 and review.rate < 1 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+                <i style="color: #ffb503" class="fa fa-star{% if review.rate < 1.5%}-o empty{% elif review.rate >= 1.5 and review.rate < 2 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+                <i style="color: #ffb503" class="fa fa-star{% if review.rate < 2.5%}-o empty{% elif review.rate >= 2.5 and review.rate < 3 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+                <i style="color: #ffb503" class="fa fa-star{% if review.rate < 3.5%}-o empty{% elif review.rate >= 3.5 and review.rate < 4 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+                <i style="color: #ffb503" class="fa fa-star{% if review.rate < 4.5%}-o empty{% elif review.rate >= 4.5 and review.rate < 5 %}-half-o empty{% endif %}" aria-hidden="true"></i> - Vytvořeno: {{ review.created_date }} - Upraveno: {{ review.updated_date }}
+                            <p></p>
+                            <p>{{ review.text }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
         </div>
     </div>
 {% endblock %}

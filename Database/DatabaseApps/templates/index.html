@@ -2,99 +2,108 @@
 {% load static %}
 
 {% block content %}
-    <hr class="lineHere">
-    <div class="containerText">
+    <hr>
+    <div class="container-xl containerText">
     <h2 style="text-align: center; padding: 10px">ÚVODNÍ STRÁNKA</h2>
         <div>
-            <img src="{% static '../static/img/list-of-book.png' %}" alt="My image" class="indexImage">
+            <img src="{% static '../static/img/list-of-book.png' %}" alt="My image" class="img-fluid rounded mx-auto d-block indexImage">
         </div>
         <p></p>
-        <ul class="messagesMid">
-        {% for message in messages %}
-            <li class="messages">{{ message }}</li>
-        {% endfor %}
-        </ul>
-        <p></p>
         <div class="row">
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Fantasy/">
-                    <div  class="indexBoxContent">
-                        <img src="{% static '../static/img/fantasy.jpg' %}" class="labelImg">
-                        <span>Fantasy</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Sci-fi/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/sci-fi.jpg' %}" class="labelImg">
-                        <span>Sci-fi</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Romány/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/novels.jpg' %}" class="labelImg">
-                        <span>Romány</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Drama/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/drama.jpg' %}" class="labelImg">
-                        <span>Drama</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Komedie/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/comedy.jpg' %}" class="labelImg">
-                        <span>Komedie</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Poezie/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/poetry.jpg' %}" class="labelImg">
-                        <span>Poezie</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Detektivky/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/detective.jpg' %}" class="labelImg">
-                        <span>Detektivky</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Horor/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/horor.jpg' %}" class="labelImg">
-                        <span>Horor</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Literatura česká/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/cz.svg.png' %}" class="labelImg">
-                        <span>Literatura česká</span>
-                    </div>
-                </a>
-            </div>
-            <div class="indexBox">
-                <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Literatura světová/">
-                    <div class="indexBoxContent">
-                        <img src="{% static '../static/img/w.jpg' %}" class="labelImg">
-                        <span>Literatura světová</span>
-                    </div>
-                </a>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6"></div>
+                <ul class="messagesMid">
+                    {% for message in messages %}
+                        <li class="messages2">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            <div class="col-sm-3"></div>
+        </div>
+        <p></p>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2 indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Fantasy/">
+                        <div  class="indexBoxContent">
+                            <img src="{% static '../static/img/fantasy.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Fantasy</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Sci-fi/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/sci-fi.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Sci-fi</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Romány/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/novels.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Romány</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Drama/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/drama.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Drama</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Komedie/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/comedy.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Komedie</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Poezie/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/poetry.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Poezie</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Detektivky/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/detective.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Detektivky</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2  indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Horor/">
+                        <div class="indexBoxContent">
+                            <img src="{% static '../static/img/horor.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Horor</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2 indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Literatura česká/">
+                        <div class="indexBoxContent2">
+                            <img src="{% static '../static/img/cz.svg.png' %}" class="img-fluid float-start labelImg">
+                            <span>Literatura česká</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2 indexBox">
+                    <a class="indexBoxA" href="../DatabaseApps/booklist/genres/Literatura světová/">
+                        <div class="indexBoxContent2">
+                            <img src="{% static '../static/img/w.jpg' %}" class="img-fluid float-start labelImg">
+                            <span>Literatura světová</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2"></div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2"></div>
             </div>
         </div>
 

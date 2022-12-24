@@ -2,21 +2,28 @@
 {% load static %}
 
 {% block content %}
-<hr class="lineHere">
-    <div class="containerLoginTextMain">
-        <div class="containerLoginText">
-            <div class="containerLogin">
+<hr>
+    <div class="container-xl containerLoginTextMain">
+        <div class="row containerLoginText">
+            <div class="col-1"></div>
+            <div class="col-10 containerLogin">
                 <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Profil</h2>
+                <div class="row">
+                    <div class="col-sm-4 text-center">
                     <p>Profilová fotka</p>
                     {% if request.user.image%}
-                        <p><img src="{{ profile.image.url }}" alt="fotka" class="cardImage"></p>
+                        <a href="{{ profile.image.url }}"><img src="{{ profile.image.url }}" alt="fotka" class="card-img" style="border-radius: 100px; height: 100px;width: 100px;"></a>
                     {% else %}
-                        <p><img src="{% static '../static/img/default-avatar.png' %}" alt="fotka" class="cardImage"></p>
+                        <p><img src="{% static '../static/img/default-avatar.png' %}" alt="fotka" class="cardImage" style="border-radius: 100px; height: 100px;width: 100px;"></p>
                     {% endif %}
+                    </div>
+                    <div class="col-sm-4 text-center">
                     <p>Přezdívka: {{ profile.username}}</p>
                     <p>Email: {{ profile.email }}</p>
                     <p>Křestní jméno: {{ profile.first_name }}</p>
                     <p>Příjmení: {{ profile.last_name }}</p>
+                    </div>
+                    <div class="col-sm-4 text-center">
                     {% if profile.city %}
                     <p>Město: {{ profile.city }}</p>
                     {% else %}
@@ -42,32 +49,58 @@
                     {% else %}
                     <p>Věk: </p>
                     {% endif %}
-                    {% if profile.about %}
-                    <p>O tobě: </p>
-                    <div class="text-break" style="background-color: white; border-radius: 2px; color: black; padding-left: 4px;"><p>{{ profile.about}}</p></div>
-                    {% else %}
-                    <p>O tobě: </p>
-                    {% endif %}
+                    </div>
                     <p></p>
-                    <p>Změň údaje: <a href="{% url 'edit' %}">Změnit</a></p>
-                    {% if user.is_superuser or user.is_staff%}
-                        <p></p>
-                        <p><a href="{% url 'admin:index' %}">Úprava databáze</a></p>
-                    {% endif %}
+                        <div class="row">
+                            <div class="col-12">
+                            {% if profile.about %}
+                            <p>O tobě: </p>
+                            <div class="text-break" style="background-color: white; border-radius: 2px; color: black; padding-left: 4px;"><p>{{ profile.about}}</p></div>
+                            {% else %}
+                            <p>O tobě: </p>
+                            {% endif %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-3 text-center">
+                                <p></p>
+                                <a href="{% url 'edit' %}">Změnit údaje</a>
+                            </div>
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-3 text-center">
+                                {% if user.is_superuser or user.is_staff%}
+                                <p></p>
+                                <a href="{% url 'admin:index' %}">Úprava databáze</a>
+                                {% endif %}
+                            </div>
+                            <div class="col-sm-2"></div>
+                            <p></p>
+                        </div>
+                </div>
             </div>
-            {% for review in review5 %}
-                <form action="{% url 'delete' review.book_id %}" method="post">
-                {% csrf_token %}
-                {{ review.book }} - Hodnocení: <i style="color: #ffb503" class="fa fa-star{% if review.rate < 0.5%}-o empty{% elif review.rate >= 0.5 and review.rate < 1 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 1.5%}-o empty{% elif review.rate >= 1.5 and review.rate < 2 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 2.5%}-o empty{% elif review.rate >= 2.5 and review.rate < 3 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 3.5%}-o empty{% elif review.rate >= 3.5 and review.rate < 4 %}-half-o empty{% endif %}" aria-hidden="true"></i>
-        <i style="color: #ffb503" class="fa fa-star{% if review.rate < 4.5%}-o empty{% elif review.rate >= 4.5 and review.rate < 5 %}-half-o empty{% endif %}" aria-hidden="true"></i> - Vytvořeno: {{ review.created_date }} - Upraveno: {{ review.updated_date }}
+            <div class="col-1"></div>
+            <p></p>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 text-center">
+                {% for review in review5 %}
+                    <form action="{% url 'delete' review.book_id %}" method="post">
+                    {% csrf_token %}
+                    {{ review.book }} - Hodnocení: <i style="color: #ffb503" class="fa fa-star{% if review.rate < 0.5%}-o empty{% elif review.rate >= 0.5 and review.rate < 1 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+            <i style="color: #ffb503" class="fa fa-star{% if review.rate < 1.5%}-o empty{% elif review.rate >= 1.5 and review.rate < 2 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+            <i style="color: #ffb503" class="fa fa-star{% if review.rate < 2.5%}-o empty{% elif review.rate >= 2.5 and review.rate < 3 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+            <i style="color: #ffb503" class="fa fa-star{% if review.rate < 3.5%}-o empty{% elif review.rate >= 3.5 and review.rate < 4 %}-half-o empty{% endif %}" aria-hidden="true"></i>
+            <i style="color: #ffb503" class="fa fa-star{% if review.rate < 4.5%}-o empty{% elif review.rate >= 4.5 and review.rate < 5 %}-half-o empty{% endif %}" aria-hidden="true"></i> - Vytvořeno: {{ review.created_date }} - Upraveno: {{ review.updated_date }}
+                        <p></p>
+                        <p>{{ review.text }}</p>
+                    <input type="submit" value="Vymaž recenzi" class="btn btn-primary">
+                    </form>
                     <p></p>
-                    <p>{{ review.text }}</p>
-                <input type="submit" value="Vymaž recenzi" class="btn btn-primary">
-                </form>
-            {% endfor %}
+                {% endfor %}
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
         </div>
     </div>
 {% endblock %}

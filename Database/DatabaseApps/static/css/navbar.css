@@ -1,38 +1,45 @@
 .navbar {
-  display: flex;
-  padding: 4px;
-  color: white;
-  font-family: "Gentium Book Basic";
-  text-transform: uppercase;
-  background-color: darkslategrey;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  overflow: hidden;
+    padding: 6px;
+    color: white;
+    font-family: "Gentium Book Basic";
+    text-transform: uppercase;
+    background-color: darkslategrey;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    overflow: hidden;
+}
+
+.nav-link-white{
+    color: white;
+    margin: 12px 1px;
+    padding: 8px;
+}
+
+.nav-link-white-right{
+    color: white;
+    margin: 32px 1px;
+    padding: 8px;
 }
 
 ul {
-  display: flex;
-  list-style-type: none;
   overflow: hidden;
-  padding: 8px;
+  padding: 10px;
 }
 
 ul li{
-  list-style: none;
+
 }
 
+
 li a {
-  display: block;
-  color: white;
-  margin: 5px;
-  padding: 14px 16px;
-  text-decoration: none;
+
 }
 
 ul li a {
-  text-decoration: none;
-  color: white;
-  border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 8px;
 }
 
 ul li a:hover {
@@ -40,35 +47,9 @@ ul li a:hover {
   color: darkslategrey;
 }
 
-.logoLeft {
-  list-style-type: none;
-  overflow: hidden;
-  padding: 8px;
-  text-align: left;
-  font-size: 40px;
-}
-
-.ulLeft {
-  font-size: 20px;
-  text-align: left;
-}
-
-.lomitkoRight {
-  color: white;
-  margin: 5px;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.ulRight {
-  font-size: 20px;
-  text-align: right;
-}
-
 .avatar_p {
-  max-height: 50px !important;
-  max-width: 50px !important;
+  max-height: 45px !important;
+  max-width: 45px !important;
   border-radius: 20px !important;
 }
 
@@ -77,12 +58,11 @@ ul li a:hover {
     border: 2px;
     border-radius: 20px;
     color: white;
-    padding: 2px 2px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
-    margin: 8px 2px;
+    margin: 24px 1px;
+    padding: 2px;
     cursor: pointer;
     transition-duration: 0s;
 }
@@ -91,3 +71,27 @@ ul li a:hover {
     background-color: white;
     color: darkslategrey;
 }
+
+.logoutButton{
+    background-color: darkslategrey;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin: 30px 1px;
+    padding: 8px;
+    cursor: pointer;
+    transition-duration: 0s;
+    text-transform: uppercase;
+}
+
+.logoutButton:hover{
+    background-color: white;
+    color: darkslategrey;
+}
+
+.lomitko {
+    margin: 40px 14px;
+}
+

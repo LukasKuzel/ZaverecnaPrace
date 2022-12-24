@@ -2,18 +2,20 @@
 
 {% block title %}Seznam autorů{% endblock %}
 {% block content %}
-    <hr class="lineHere">
-    <div class="containerText">
+    <hr>
+    <div class="container-xl containerText">
         <h2 style="text-align: center; padding-top: 1%">SEZNAM AUTORŮ</h2>
         <div class="row">
             {% for author in authors_list %}
-                <div class="card">
-                  <img src="{{ author.photo.url }}" alt="fotka" class="cardImage">
-                  <div class="containerCard">
-                    <h4><b>{{ author.name}} {{ author.surname }}</b></h4>
-                      <p>{{ author.birthdate }} - {{ author.deathdate }}</p>
-                  </div>
-                 <a class="buttonBlue" href="{% url 'authordetail' author.pk %}">Podrobnosti</a>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-2 text-center">
+                    <div class="card" >
+                        <img src="{{ author.photo.url }}" alt="fotka" class="card-img">
+                        <div class="card-body">
+                            <h4 class="card-title"><b>{{ author.name}} {{ author.surname }}</b></h4>
+                            <p class="card-text">{{ author.birthdate }} - {{ author.deathdate }}</p>
+                        </div>
+                        <a href="{% url 'authordetail' author.pk %}"><button  type="button"  class="btn btn-primary">Podrobnosti</button></a>
+                    </div>
                 </div>
             {% endfor %}
         </div>

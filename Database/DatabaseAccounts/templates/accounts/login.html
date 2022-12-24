@@ -1,22 +1,29 @@
 {% extends "base2.html" %}
 
 {% block content %}
-<hr class="lineHere">
-    <div class="containerLoginTextMain">
-        <div class="containerLoginText">
-            <div class="containerLogin">
-                <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Login</h2>
-                <form class="site-form" action="{% url 'login' %}" method="post">
-                    {% csrf_token %}
-                    <p>Email:</p>
-                    <p>{{ forms.email }}</p>
-                    <p>Heslo:</p>
-                    <p>{{ forms.password}}</p>
-                    {% for error in forms.non_field_errors%}<p style="color: red">{{ error }}</p>{% endfor %}
-                    <p></p>
-                    <input type="submit" value="Login" class="registerButton">
-                </form>
+<hr>
+    <div class="container-xl containerLoginTextMain">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm-6">
+                <div class="containerLoginText">
+                    <div class="containerLogin">
+                        <h2 style="text-align: center;padding-bottom: 2%; text-transform: uppercase">Login</h2>
+                        <form class="site-form" action="{% url 'login' %}" method="post">
+                            {% csrf_token %}
+                            <p>Email:</p>
+                            {{ forms.email }}
+                            <p></p>
+                            <p>Heslo:</p>
+                            {{ forms.password}}
+                            {% for error in forms.non_field_errors%}<p style="color: red">{{ error }}</p>{% endfor %}
+                            <p></p>
+                            <input type="submit" value="Login" class="registerButton">
+                        </form>
+                    </div>
+                </div>
             </div>
+            <div class="col-3"></div>
         </div>
     </div>
 {% endblock %}
