@@ -80,5 +80,8 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | Informace o knize: RUR. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/R.U.R. |
 | Informace o autorovi: Boris Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Boris_Strugackij |
 | Informace o autorovi: Arkadij Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Arkadij_Strugackij |
+| Informace o knize: Piknik u cesty. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Piknik_u_cesty |
+| Informace o autorovi: George R. R. Martin. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/George_R._R._Martin |
+|  | 
 
 | Obrázek Knih [online]. -: -, - [cit. 2022-11-17]. Dostupné z: https://thecommuniquechs.com/2552/opinion/what-is-the-best-book-genre/ |
