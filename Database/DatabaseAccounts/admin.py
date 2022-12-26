@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 
 from .models import Profile
 
-# Register your models here.
+# Třída na rozšíření polí v základním modelu User.
 class UserAdminConfig(UserAdmin):
     search_fields = ('email','username','last_name',)
     list_filter = ('email','username','last_name','is_active','is_staff')
@@ -22,5 +22,5 @@ class UserAdminConfig(UserAdmin):
         ),
     )
 
-
+# Přidání nových polí.
 admin.site.register(Profile, UserAdminConfig)

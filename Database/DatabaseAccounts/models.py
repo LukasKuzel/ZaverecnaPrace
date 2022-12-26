@@ -1,18 +1,13 @@
-from datetime import timezone
-
-from django.conf import settings
 from django.contrib.auth.models import User, AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.core.validators import RegexValidator
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
 
-
+#Ukládání obrázku do složky image_profile + id uživatele + složka /image/ + název obrázku
 def profile_images(instance, filename):
     return "image_profile/" + str(instance.id) + "/image/" + filename
 
-
+#Třída kountrolující a upravující uživatele a superuživatele
 class CustomAccountManager(BaseUserManager):
     def create_superuser(self, email, username, first_name, last_name, password, **other_fields):
         other_fields.setdefault('is_staff', True)
@@ -37,7 +32,7 @@ class CustomAccountManager(BaseUserManager):
         user.save()
         return user
 
-
+#Třída profil
 class Profile(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(max_length=150, unique=True)
@@ -52,7 +47,6 @@ class Profile(AbstractBaseUser, PermissionsMixin):
     PCS = models.CharField(validators=[PCS_regex],max_length=5, blank=True, null=True)
     image = models.ImageField(upload_to=profile_images, blank=True, null=True)
     about = models.TextField(_('about'), max_length=1000, blank=True, null=True)
-    #last_login = models.DateTimeField(default=timezone)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 

@@ -1,18 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
-from django.template import loader
 from django.urls import reverse_lazy
 from django.views import generic
-from django.utils.translation import gettext_lazy as _
-from django.views.generic import ListView
 
-from DatabaseApps.models import Review, Book
-from . import forms
+from DatabaseApps.models import Review
 from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword, ReviewForm
 from .models import Profile
 
-
+# Funkce pro registraci uživatele
 def register_view(request):
     if request.user.is_authenticated:
         return redirect('index')
@@ -45,7 +41,7 @@ def register_view(request):
 
         return render(request, 'accounts/register.html', context=PoslatVen2)
 
-
+# Funkce pro přihlášení uživatele.
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('index')

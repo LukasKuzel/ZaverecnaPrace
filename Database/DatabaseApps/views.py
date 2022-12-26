@@ -1,11 +1,9 @@
 from django.db.models import Avg
-from django.db.models.functions import Round
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from DatabaseApps.models import *
 
-from django.contrib.auth.decorators import login_required
 
 class BookListView(ListView):
     model = Book

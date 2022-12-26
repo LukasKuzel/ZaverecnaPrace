@@ -17,7 +17,7 @@
                             <p>{{ form.username }}</p>
                             <p>Email:</p>
                             <p style="color: #ffb503">Email musí být ve formátu: 'example@example.cz'</p>
-                            {% if form.email.errors %}<p style="color: red">Tento email se již používá.</p><p style="color: red">Email musí být ve formátu: 'example@example.cz'</p>{% endif %}
+                            {% if form.email.errors %}<p style="color: red">Tento email se již používá.</p>{% endif %}
                             <p>{{ form.email }}</p>
                             <p>Křestní jméno:</p>
                             <p>{{ form.first_name }}</p>
