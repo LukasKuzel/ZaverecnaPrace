@@ -16,6 +16,7 @@
                             <p></p>
                             <p>Heslo:</p>
                             {{ forms.password}}
+                            <p></p>
                             {% for error in forms.non_field_errors%}<p style="color: red">{{ error }}</p>{% endfor %}
                             <p></p>
                             <input type="submit" value="Login" class="registerButton">

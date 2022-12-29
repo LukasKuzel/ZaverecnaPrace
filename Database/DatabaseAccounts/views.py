@@ -71,31 +71,34 @@ def login_view(request):
 
         return render(request, 'accounts/login.html', context=PoslatVen3)
 
-
+# Funkce pro odhlášení
 def logout_view(request):
     if request.method == 'POST':
+        #Logout user
         logout(request)
         return redirect('index')
 
-
+#Třída na úpravu údajů
 class edit_view(generic.UpdateView):
     form_class = MyEditForm
     template_name = 'accounts/edit.html'
     success_url = reverse_lazy('profile')
 
+    # Vypíše informace o uživateli do daných polí
     def get_object(self, queryset=None):
         return self.request.user
 
-
+#Třída na změnu hesla
 class edit_password_view(generic.UpdateView):
     form_class = MyEditFormPassword
     template_name = 'accounts/password.html'
     success_url = reverse_lazy('login')
 
+    #Vypíše informace o uživateli do daných polí
     def get_object(self, queryset=None):
         return self.request.user
 
-
+#Třída na vypsání uložených informací daného uživatele
 def profile_detail(request):
     profile = Profile.object.filter(id=request.user.id).first()
     review5 = Review.objects.all().filter(user__id=request.user.id)
@@ -107,7 +110,7 @@ def profile_detail(request):
 
     return render(request, 'accounts/profile.html', context=PoslatVen)
 
-
+#Funkce na odeslání recenze
 def submitReview(request, book_id):
     url = request.META.get('HTTP_REFERER')
     if request.user.is_authenticated:
@@ -131,7 +134,7 @@ def submitReview(request, book_id):
                     messages.success(request, 'Vaše recenze byla vytvořena.')
                     return redirect(url)
 
-
+#Funkce na mazání recenze k dané knize
 def delete(request, book_id):
   review6 = Review.objects.get(user__id=request.user.id, book__id=book_id)
   review6.delete()

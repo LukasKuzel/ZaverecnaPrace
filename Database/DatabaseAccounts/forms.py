@@ -6,7 +6,7 @@ from django import forms
 from DatabaseApps.models import Review
 from .models import Profile
 
-
+#Třída vytváří formulář pro registraci, kde kontroluje, zda jsou hodnoty zadány správně.
 class CreateUserForm(UserCreationForm):
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -47,7 +47,7 @@ class CreateUserForm(UserCreationForm):
             raise forms.ValidationError(_("Hesla se neshodují"))
         return password2
 
-
+#Třída kotroluje správnost emailu a hesla.
 class MyAuthenticationForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"autofocus": True, 'class': 'form-control'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
@@ -60,7 +60,7 @@ class MyAuthenticationForm(forms.Form):
             raise forms.ValidationError(_("Špatný email nebo heslo."))
 
 
-
+#Třída vytváří pole, do kterých se zapisují údaje z databáze nebo do ní.
 class MyEditForm(UserChangeForm):
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}), disabled=True)
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
