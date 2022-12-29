@@ -55,6 +55,8 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 21.12. Review (9h)
 - 23.12. Editing (7h)
 - 24.12. Bootstrap (9h)
+- 28.12. Docker (5h)
+- 29.12. Docekr (2h)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
