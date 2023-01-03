@@ -19,8 +19,16 @@ class Nation(models.Model):
     def __str__(self):
         return f'{self.state} - {self.city}'
 
+
 class Genre(models.Model):
     name = models.CharField(max_length=60, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Century(models.Model):
+    name = models.CharField(max_length=3, unique=True)
 
     def __str__(self):
         return self.name
@@ -46,10 +54,9 @@ class Author(models.Model):
 
 class Book(models.Model):
     name = models.CharField(max_length=250, verbose_name="Title", blank=False)
-    rate = models.FloatField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)], blank=False,
-                             null=True, help_text="Enter between 1 - 5")
     photo = models.ImageField(upload_to=poster_book_path, blank=False, null=True)
     plot = models.TextField(blank=False, null=True)
+    century = models.ManyToManyField(Century)
     genre = models.ManyToManyField(Genre)
     author = models.ManyToManyField(Author)
 

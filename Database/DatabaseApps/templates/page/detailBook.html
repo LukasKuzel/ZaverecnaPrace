@@ -1,6 +1,7 @@
 {% extends "base2.html" %}
 {% load static %}
 
+
 {% block content %}
     <hr>
     <div class="container-xl containerTextDetail">
@@ -27,6 +28,7 @@
                             {% endif %}
                             <p class="card-text">Napsal: {% for author in books_detail.author.all %}<a href="{% url 'authordetail' author.pk %}" class="card-genre">{{ author.name }} {{ author.surname }}</a>{% endfor %}</p>
                             <p class="card-text">Žánry: {% for genre in books_detail.genre.all %}<a href="{% url 'bookgenre' genre.name %}" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
+                            <p class="card-text">Století: {% for century in books_detail.century.all %}<a href="{% url 'bookcentury' century.name %}" class="card-genre">{{ century.name }} </a>{% endfor %}</p>
                             <p></p>
                             </div>
                         <div class="col-xl-9">

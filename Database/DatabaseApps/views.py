@@ -13,6 +13,8 @@ class BookListView(ListView):
     def get_queryset(self):
         if 'genre_name' in self.kwargs:
             return Book.objects.filter(genre__name=self.kwargs['genre_name']).all()
+        elif 'century_name' in self.kwargs:
+            return Book.objects.filter(century__name=self.kwargs['century_name']).all()
         else:
             return Book.objects.all()
 
@@ -21,11 +23,13 @@ class BookListView(ListView):
         if 'genre_name' in self.kwargs:
             context['view_title'] = f"ŽÁNR: {self.kwargs['genre_name']}"
             context['view_head'] = f"ŽÁNR KNIH: {self.kwargs['genre_name']}"
+        elif 'century_name' in self.kwargs:
+            context['view_title'] = f"STOLETÍ: {self.kwargs['century_name']}"
+            context['view_head'] = f"STOLETÍ: {self.kwargs['century_name']}"
         else:
             context['view_title'] = 'KNIHY'
             context['view_head'] = 'SEZNAM KNIH'
         return context
-
 
 class AuthorListView(ListView):
     model = Author
@@ -47,6 +51,8 @@ class BookDetailView(DetailView):
     def get_queryset(self):
         if 'genre_name' in self.kwargs:
             return Book.objects.filter(genre__name=self.kwargs['genre_name']).all()
+        elif 'century_name' in self.kwargs:
+            return Book.objects.filter(century__name=self.kwargs['century_name']).all()
         else:
             return Book.objects.all()
 
@@ -57,6 +63,8 @@ class BookDetailView(DetailView):
         if 'genre_name' in self.kwargs:
             context['view_title'] = f"ŽÁNR: {self.kwargs['genre_name']}"
             context['view_head'] = f"ŽÁNR KNIH: {self.kwargs['genre_name']}"
+        elif 'century_name' in self.kwargs:
+            context['view_title'] = f"STOLETÍ: {self.kwargs['century_name']}"
         else:
             context['view_title'] = 'KNIHY'
             context['view_head'] = 'SEZNAM KNIH'
@@ -70,6 +78,7 @@ class AuthorDetailView(DetailView):
 
 
 def index(request):
+    century = Century.objects.all()
     books = Book.objects.all()
     authors = Author.objects.all()
     genres = Genre.objects.all()
@@ -77,6 +86,7 @@ def index(request):
 
 
     PoslatVen = {
+        'century':century,
         'books':books,
         'authors':authors,
         'genres':genres,

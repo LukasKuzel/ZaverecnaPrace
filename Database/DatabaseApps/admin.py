@@ -30,3 +30,5 @@ class FilerN(admin.ModelAdmin):
     list_filter = ('state','city')
 
 admin.site.register(Nation, FilerN)
+
+admin.site.register(Century)

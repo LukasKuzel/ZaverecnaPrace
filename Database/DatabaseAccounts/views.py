@@ -23,7 +23,7 @@ def register_view(request):
                 if 'image' in request.FILES:
                     user.image = request.FILES['image']
                 user.save()
-                #log in the user in
+                #Přihlásí uživatele
                 login(request, user)
                 messages.success(request, 'Účet byl vytvořen pro ' + username)
                 return redirect('index')
@@ -49,11 +49,11 @@ def login_view(request):
         if request.method == 'POST':
             forms = MyAuthenticationForm(request.POST)
             if forms.is_valid():
-                #log in the user
                 email = forms.cleaned_data["email"]
                 password = forms.cleaned_data["password"]
                 user = authenticate(email=email, password=password)
                 if user:
+                    #Přihlásí uživatele
                     login(request, user)
                     return redirect('index')
                 else:
