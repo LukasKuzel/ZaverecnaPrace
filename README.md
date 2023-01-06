@@ -58,7 +58,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 
 #### Leden ()
 - 3.1. Updating-Century (2h)
-
+- 6.1. Search bar (2h)
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
 | https://django.fun/en/qa/427054/ |
