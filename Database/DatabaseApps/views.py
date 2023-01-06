@@ -77,6 +77,22 @@ class AuthorDetailView(DetailView):
     template_name = 'page/detailAuthor.html'
 
 
+def search(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        resultA = Author.objects.filter(name__contains=searched)
+        resultB = Book.objects.filter(name__contains=searched)
+
+        PoslatVen = {
+            'searched':searched,
+            'resultA':resultA,
+            'resultB':resultB,
+        }
+
+        return render(request, 'page/search_bar.html', context=PoslatVen)
+    else:
+        return render(request, 'page/search_bar.html', {})
+
 def index(request):
     century = Century.objects.all()
     books = Book.objects.all()

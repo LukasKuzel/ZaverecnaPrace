@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="navbar navbar-expand-sm">
+<nav class="navbar navbar-expand-md">
     <div class="container-xl">
         <ul class="navbar-nav">
             <li style="font-size: 30px" class="nav-item">PČ</li>
@@ -19,6 +19,11 @@
                     <a href="{% url 'booklist' %}">Knihy</a>
                 </li>
             </ul>
+            <form class="d-flex" method="post" action="{% url 'search' %}">
+                {% csrf_token %}
+                <input class="form-control me-1" type="search" placeholder="Hledat název.." aria-label="Hledat" name="searched">
+                <button class="btn btn-outline-primary me-1" type="submit">Hledat</button>
+            </form>
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                 {% if request.user.image %}

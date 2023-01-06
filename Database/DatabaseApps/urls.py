@@ -11,4 +11,5 @@ urlpatterns = [
     path('booklist/genres/<str:genre_name>/', views.BookListView.as_view(), name='bookgenre'),
     path('booklist/century/<str:century_name>/', views.BookListView.as_view(), name='bookcentury'),
     path('booklist/authors/<str:author_name>/', views.BookListView.as_view(), name='bookauthor'),
+    path('search_bar', views.search, name='search'),
 ]

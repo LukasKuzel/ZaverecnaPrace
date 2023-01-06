@@ -28,7 +28,7 @@ class Genre(models.Model):
 
 
 class Century(models.Model):
-    name = models.CharField(max_length=3, unique=True)
+    name = models.CharField(max_length=3, unique=True, null=True, blank=False)
 
     def __str__(self):
         return self.name
