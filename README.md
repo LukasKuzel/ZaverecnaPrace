@@ -63,7 +63,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 ### Docker
 - docker-compose build
 - docker-compose up
-V příkazovém řádku si vlezeme do složky databáze a napíšeme příkazy pro přidání superuživatele.
+- V příkazovém řádku si vlezeme do složky databáze a napíšeme příkazy pro přidání superuživatele.
 - docker exec -it [jmenodatabaze] bash
 - python manage.py createsuperuser
 
