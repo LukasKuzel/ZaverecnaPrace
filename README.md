@@ -59,6 +59,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 #### Leden ()
 - 3.1. Updating-Century (2h)
 - 6.1. Search bar (2h)
+- 11.1. Searching (3h)
 
 ### Docker
 - docker-compose build
