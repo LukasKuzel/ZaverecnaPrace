@@ -1,4 +1,5 @@
-from django.db.models import Avg
+from django.db.models import Avg, Value
+from django.db.models.functions import Concat
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -80,8 +81,13 @@ class AuthorDetailView(DetailView):
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        resultA = Author.objects.filter(name__contains=searched)
-        resultB = Book.objects.filter(name__contains=searched)
+        queryset1 = Author.objects.annotate(fullname=Concat('name', Value(' '), 'surname'))
+        resultA = queryset1.filter(fullname__icontains=searched) | Author.objects.filter(
+            name__iexact=searched) | Author.objects.filter(surname__iexact=searched) | Author.objects.filter(
+            name__istartswith=searched) | Author.objects.filter(surname__istartswith=searched)
+        resultB = Book.objects.filter(name__contains=searched) | Book.objects.filter(
+            name__iexact=searched) | Book.objects.filter(name__istartswith=searched) | Book.objects.filter(
+            century__name__icontains=searched)
 
         PoslatVen = {
             'searched':searched,

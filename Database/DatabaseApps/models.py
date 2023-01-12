@@ -14,10 +14,10 @@ def poster_author_path(instance, filename):
 #Kvůli času narychlo udělaná třída. Ještě budu upravovat + to birthdate a death date
 class Nation(models.Model):
     state = models.CharField(max_length=250, verbose_name="State", blank=True)
-    city = models.CharField(max_length=250, verbose_name="City", blank=True)
+
 
     def __str__(self):
-        return f'{self.state} - {self.city}'
+        return f'{self.state}'
 
 
 class Genre(models.Model):
@@ -42,6 +42,7 @@ class Author(models.Model):
     deathdate = models.CharField(max_length=100, verbose_name="death date", null=True, blank=True)
     photo = models.ImageField(upload_to=poster_author_path, blank=False, null=True)
     bio = models.TextField(blank=False, null=True)
+    city = models.CharField(max_length=250, verbose_name="City", blank=True)
     nation = models.ManyToManyField(Nation)
 
 

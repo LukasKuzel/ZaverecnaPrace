@@ -26,8 +26,8 @@ admin.site.register(Review, CommentAdmin)
 
 
 class FilerN(admin.ModelAdmin):
-    search_fields = ('state','city')
-    list_filter = ('state','city')
+    search_fields = ('state','state')
+    list_filter = ('state','state')
 
 admin.site.register(Nation, FilerN)
 
