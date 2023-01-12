@@ -61,6 +61,13 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 11.1. Searching (3h)
 - 12.1. Editing (2h)
 
+
+- V příkazovém řádku si vlezeme do složky databáze a napíšeme příkazy pro přidání superuživatele.
+- docker exec -it [jmenodatabaze] bash
+- python manage.py createsuperuser
+- Načíst data
+- python manage.py loaddata saved.json
+
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
 | https://django.fun/en/qa/427054/ |
