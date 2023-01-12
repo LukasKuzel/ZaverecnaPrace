@@ -55,6 +55,11 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 21.12. Review (9h)
 - 23.12. Editing (7h)
 - 24.12. Bootstrap (9h)
+#### Leden ()
+- 3.1. Updating-Century (2h)
+- 6.1. Search bar (2h)
+- 11.1. Searching (3h)
+- 12.1. Editing (2h)
 
 ### Odkazy
 | https://docs.djangoproject.com/en/4.1/ref/applications/ |
