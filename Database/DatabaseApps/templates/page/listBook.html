@@ -12,9 +12,11 @@
                         <img src="{{ book.photo.url }}" alt="fotka" class="card-img">
                         <div class="card-body">
                             <h4 class="card-title"><b>{{ book.name}}</b></h4>
-                            <p class="card-text">{% for genre in book.genre.all %}<a href="{% url 'bookgenre' genre.name %}" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
+                            <p class="card-text">{% for genre in book.genre.all %}
+                                <a href="{% url 'bookgenre' genre.name %}" class="card-genre">{{ genre.name }} </a>{% endfor %}</p>
                             <p></p>
-                            <p class="card-text">Z {% for century in book.century.all %}<a href="{% url 'bookcentury' century.name %}" class="card-genre">{{ century.name }} století</a>{% endfor %}</p>
+                            <p class="card-text">Z {% for century in book.century.all %}
+                                <a href="{% url 'bookcentury' century.name %}" class="card-genre">{{ century.name }} století</a>{% endfor %}</p>
                         </div>
                         <a href="{% url 'bookdetail' book.pk %}"><button  type="button"  class="btn btn-primary">Podrobnosti</button></a>
                     </div>

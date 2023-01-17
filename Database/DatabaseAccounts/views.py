@@ -8,6 +8,7 @@ from DatabaseApps.models import Review
 from .forms import CreateUserForm, MyAuthenticationForm, MyEditForm, MyEditFormPassword, ReviewForm
 from .models import Profile
 
+
 # Funkce pro registraci uživatele
 def register_view(request):
     if request.user.is_authenticated:
@@ -23,7 +24,7 @@ def register_view(request):
                 if 'image' in request.FILES:
                     user.image = request.FILES['image']
                 user.save()
-                #Přihlásí uživatele
+                # Přihlásí uživatele
                 login(request, user)
                 messages.success(request, 'Účet byl vytvořen pro ' + username)
                 return redirect('index')
@@ -33,13 +34,13 @@ def register_view(request):
         else:
             user_forms = CreateUserForm
 
-
-        PoslatVen2 = {
-            'user_forms':user_forms,
+        poslat_ven = {
+            'user_forms': user_forms,
 
         }
 
-        return render(request, 'accounts/register.html', context=PoslatVen2)
+        return render(request, 'accounts/register.html', context=poslat_ven)
+
 
 # Funkce pro přihlášení uživatele.
 def login_view(request):
@@ -53,7 +54,7 @@ def login_view(request):
                 password = forms.cleaned_data["password"]
                 user = authenticate(email=email, password=password)
                 if user:
-                    #Přihlásí uživatele
+                    # Přihlásí uživatele
                     login(request, user)
                     return redirect('index')
                 else:
@@ -63,22 +64,23 @@ def login_view(request):
         else:
             forms = MyAuthenticationForm()
 
-        PoslatVen3 = {
+        poslat_ven = {
             'forms': forms,
-
 
         }
 
-        return render(request, 'accounts/login.html', context=PoslatVen3)
+        return render(request, 'accounts/login.html', context=poslat_ven)
+
 
 # Funkce pro odhlášení
 def logout_view(request):
     if request.method == 'POST':
-        #Logout user
+        # Logout user
         logout(request)
         return redirect('index')
 
-#Třída na úpravu údajů
+
+# Třída na úpravu údajů
 class edit_view(generic.UpdateView):
     form_class = MyEditForm
     template_name = 'accounts/edit.html'
@@ -88,30 +90,33 @@ class edit_view(generic.UpdateView):
     def get_object(self, queryset=None):
         return self.request.user
 
-#Třída na změnu hesla
+
+# Třída na změnu hesla
 class edit_password_view(generic.UpdateView):
     form_class = MyEditFormPassword
     template_name = 'accounts/password.html'
     success_url = reverse_lazy('login')
 
-    #Vypíše informace o uživateli do daných polí
+    # Vypíše informace o uživateli do daných polí
     def get_object(self, queryset=None):
         return self.request.user
 
-#Třída na vypsání uložených informací daného uživatele
+
+# Třída na vypsání uložených informací daného uživatele
 def profile_detail(request):
     profile = Profile.object.filter(id=request.user.id).first()
     review5 = Review.objects.all().filter(user__id=request.user.id)
 
-    PoslatVen = {
-        'profile':profile,
-        'review5':review5,
+    poslat_ven = {
+        'profile': profile,
+        'review5': review5,
     }
 
-    return render(request, 'accounts/profile.html', context=PoslatVen)
+    return render(request, 'accounts/profile.html', context=poslat_ven)
 
-#Funkce na odeslání recenze
-def submitReview(request, book_id):
+
+# Funkce na odeslání recenze
+def submit_review(request, book_id):
     url = request.META.get('HTTP_REFERER')
     if request.user.is_authenticated:
         if request.method == 'POST':
@@ -134,8 +139,9 @@ def submitReview(request, book_id):
                     messages.success(request, 'Vaše recenze byla vytvořena.')
                     return redirect(url)
 
-#Funkce na mazání recenze k dané knize
+
+# Funkce na mazání recenze k dané knize
 def delete(request, book_id):
-  review6 = Review.objects.get(user__id=request.user.id, book__id=book_id)
-  review6.delete()
-  return redirect('profile')
+    review6 = Review.objects.get(user__id=request.user.id, book__id=book_id)
+    review6.delete()
+    return redirect('profile')

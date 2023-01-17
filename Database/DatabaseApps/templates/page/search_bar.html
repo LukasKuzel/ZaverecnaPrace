@@ -9,7 +9,7 @@
                     <p></p>
                 <div class="row">
                     <h3>Knihy: </h3>
-                    {% for book in resultB %}
+                    {% for book in result_b %}
                         <div class="col-lg-3 col-md-5 col-sm-6 col-xs-2 text-center">
                             <div class="card">
                                 <img src="{{ book.photo.url }}" alt="fotka" class="card-img">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="row">
                     <h3>Autoři: </h3>
-                    {% for author in resultA %}
+                    {% for author in result_a %}
                         <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 text-center">
                             <div class="card">
                                 <img src="{{ author.photo.url }}" alt="fotka" class="card-img">

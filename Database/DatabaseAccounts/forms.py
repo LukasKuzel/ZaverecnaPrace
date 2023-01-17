@@ -6,7 +6,8 @@ from django import forms
 from DatabaseApps.models import Review
 from .models import Profile
 
-#Třída vytváří formulář pro registraci, kde kontroluje, zda jsou hodnoty zadány správně.
+
+# Třída vytváří formulář pro registraci, kde kontroluje, zda jsou hodnoty zadány správně.
 class CreateUserForm(UserCreationForm):
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -47,7 +48,8 @@ class CreateUserForm(UserCreationForm):
             raise forms.ValidationError(_("Hesla se neshodují"))
         return password2
 
-#Třída kotroluje správnost emailu a hesla.
+
+# Třída kotroluje správnost emailu a hesla.
 class MyAuthenticationForm(forms.Form):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"autofocus": True, 'class': 'form-control'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
@@ -60,7 +62,7 @@ class MyAuthenticationForm(forms.Form):
             raise forms.ValidationError(_("Špatný email nebo heslo."))
 
 
-#Třída vytváří pole, do kterých se zapisují údaje z databáze nebo do ní.
+# Třída vytváří pole, do kterých se zapisují údaje z databáze nebo do ní.
 class MyEditForm(UserChangeForm):
     username = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}), disabled=True)
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -68,14 +70,19 @@ class MyEditForm(UserChangeForm):
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control'}))
     city = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
     street = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    PCS = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type':'number', 'min':'0'}))
-    phone_number = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type':'number', 'min':'0'}))
-    age = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type':'number', 'min':'0'}))
+    PCS = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number',
+                                                                             'min': '0'}))
+    phone_number = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control',
+                                                                                      'type': 'number',
+                                                                                      'min': '0'}))
+    age = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number',
+                                                                             'min': '0'}))
     about = forms.CharField(required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Profile
-        fields = ['image','username','first_name','last_name','email','city','street','PCS','age','phone_number','about']
+        fields = ['image', 'username', 'first_name', 'last_name', 'email', 'city', 'street', 'PCS', 'age',
+                  'phone_number', 'about']
 
 
 class MyEditFormPassword(UserCreationForm):
@@ -84,7 +91,7 @@ class MyEditFormPassword(UserCreationForm):
 
     class Meta:
         model = Profile
-        fields = ['password1','password2']
+        fields = ['password1', 'password2']
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
@@ -93,7 +100,8 @@ class MyEditFormPassword(UserCreationForm):
             raise forms.ValidationError(_("Hesla se neshodují"))
         return password2
 
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['text','rate']
+        fields = ['text', 'rate']

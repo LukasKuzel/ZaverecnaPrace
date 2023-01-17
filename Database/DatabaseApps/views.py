@@ -32,17 +32,6 @@ class BookListView(ListView):
             context['view_head'] = 'SEZNAM KNIH'
         return context
 
-class AuthorListView(ListView):
-    model = Author
-    context_object_name = 'authors_list'
-    template_name = 'page/listAuthor.html'
-
-
-class QuizListView(ListView):
-    model = Author
-    context_object_name = 'quiz_list'
-    template_name = 'page/listQuiz.html'
-
 
 class BookDetailView(DetailView):
     model = Book
@@ -72,6 +61,12 @@ class BookDetailView(DetailView):
         return context
 
 
+class AuthorListView(ListView):
+    model = Author
+    context_object_name = 'authors_list'
+    template_name = 'page/listAuthor.html'
+
+
 class AuthorDetailView(DetailView):
     model = Author
     context_object_name = 'authors_detail'
@@ -82,22 +77,23 @@ def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
         queryset1 = Author.objects.annotate(fullname=Concat('name', Value(' '), 'surname'))
-        resultA = queryset1.filter(fullname__icontains=searched) | Author.objects.filter(
+        result_a = queryset1.filter(fullname__icontains=searched) | Author.objects.filter(
             name__iexact=searched) | Author.objects.filter(surname__iexact=searched) | Author.objects.filter(
             name__istartswith=searched) | Author.objects.filter(surname__istartswith=searched)
-        resultB = Book.objects.filter(name__contains=searched) | Book.objects.filter(
+        result_b = Book.objects.filter(name__contains=searched) | Book.objects.filter(
             name__iexact=searched) | Book.objects.filter(name__istartswith=searched) | Book.objects.filter(
             century__name__icontains=searched)
 
-        PoslatVen = {
-            'searched':searched,
-            'resultA':resultA,
-            'resultB':resultB,
+        poslat_ven = {
+            'searched': searched,
+            'result_a': result_a,
+            'result_b': result_b,
         }
 
-        return render(request, 'page/search_bar.html', context=PoslatVen)
+        return render(request, 'page/search_bar.html', context=poslat_ven)
     else:
         return render(request, 'page/search_bar.html', {})
+
 
 def index(request):
     century = Century.objects.all()
@@ -106,17 +102,12 @@ def index(request):
     genres = Genre.objects.all()
     nation = Nation.objects.all()
 
-
-    PoslatVen = {
-        'century':century,
-        'books':books,
-        'authors':authors,
-        'genres':genres,
-        'nation':nation,
+    poslat_ven = {
+        'century': century,
+        'books': books,
+        'authors': authors,
+        'genres': genres,
+        'nation': nation,
     }
 
-    return render(request, 'index.html', context=PoslatVen)
-
-
-
-
+    return render(request, 'index.html', context=poslat_ven)
