@@ -87,17 +87,22 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 | https://stackoverflow.com/questions/39652109/django-filtering-inside-of-get-context-data |
 
 ### Zdroje
-| Informace o autorovi: Karel Čapek. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Karel_Čapek |
-| Informace o knize: Válka s mloky. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Válka_s_Mloky |
-| Informace o knize: RUR. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/R.U.R. |
-| Informace o autorovi: Boris Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Boris_Strugackij |
-| Informace o autorovi: Arkadij Strugackij. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Arkadij_Strugackij |
-| Informace o knize: Piknik u cesty. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Piknik_u_cesty |
-| Informace o autorovi: George R. R. Martin. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/George_R._R._Martin |
-| Informace o autorovi: Andrzej Sapkowski. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Andrzej_Sapkowski | 
-| Informace o autorovi: John Ronald Reuel Tolkien. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/John_Ronald_Reuel_Tolkien |
-| Informace o knize: Hobit aneb Cesta tam a zase zpátky. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Hobit_aneb_Cesta_tam_a_zase_zpátky |
-| Informace o knize: Hra o trůny. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Hra_o_trůny |
-| Informace o knize: Poslední přání. Wikipedie [online]. - [cit. 2022-12-24]. Dostupné z: https://cs.wikipedia.org/wiki/Poslední_přání |
-
-| Obrázek Knih [online]. -: -, - [cit. 2022-11-17]. Dostupné z: https://thecommuniquechs.com/2552/opinion/what-is-the-best-book-genre/ |
+| [1]		Django [online]. [cit. 2022-12-31]. Dostupné z: https://www.djangoproject.com
+[2]		Django: MVT [online]. [cit. 2022-12-31]. Dostupné z: https://www.geeksforgeeks.org/django-project-mvt-structure/
+[2]		Python [online]. - [cit. 2022-12-25]. Dostupné z: https://cs.wikipedia.org/wiki/Python
+[3]		MySQL [online]. [cit. 2022-12-31]. Dostupné z: https://www.strafelda.cz/mysq	
+[4]		Bootstrap5 [online]. [cit. 2022-12-31]. Dostupné z: https://getbootstrap.com/docs/5.2/getting-started/introduction/
+[5]		Bootstrap [online]. - [cit. 2022-12-25]. Dostupné z: https://cs.wikipedia.org/wiki/Bootstrap
+[6]		Docker [online]. - [cit. 2022-12-25]. Dostupné z: https://cs.wikipedia.org/wiki/Docker
+[7]		Tutorial: From SQLite to MySQL [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=SNyCV8vOr-g&list=PLo21uOvRgLRFpGfE7BP1EfQRf_wCBZPwU&index=21
+[8]		Tutorial: Authentication [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=tUqUdu0Sjyc&list=PLo21uOvRgLRFpGfE7BP1EfQRf_wCBZPwU&index=23&t=2018s
+[9]		Tutorial: Register [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=bOwC5e9cIXw
+[10]		Tutorial: Edit [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=R6-pB5PAA6s
+[11]		Tutorial: Errors [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=wVnQkKf-gHo&t=405s
+[12]		 Tutorial: Stars [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=gDtsAWMA3Jo
+[13] 		Tutorial: Review-Forms [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=Zkmu93lMLPs
+[14] 		Tutorial: Review [online]. [cit. 2022-12-31]. Dostupné z: https://www.youtube.com/watch?v=eIN1nZCt7Ww&list=PLo21uOvRgLRFpGfE7BP1EfQRf_wCBZPwU&index=29&t=1043s
+ |
+ 
+### Odkaz na video v prezentaci
+| https://www.youtube.com/watch?v=VlFB0xYcPno&ab_channel=LukasK. |
