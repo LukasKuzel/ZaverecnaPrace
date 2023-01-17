@@ -43,7 +43,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 21.11. Login/Register (2h)
 - 25.11. Login/Register (4h)
 - 28.11. Login/Register-messages (1h30m)
-#### Prosinec
+#### Prosinec(56h)
 - 3.12. Login/Register-email (3h30m)
 - 6.12. Login/Register-If statements (3h)
 - 8.12. Login/Register-If login/forms (2h 30m)
@@ -55,7 +55,7 @@ Jako závěrečný projekt jsem si vybral udělat databázi v Djangu. Techno pro
 - 21.12. Review (9h)
 - 23.12. Editing (7h)
 - 24.12. Bootstrap (9h)
-#### Leden ()
+#### Leden (9h)
 - 3.1. Updating-Century (2h)
 - 6.1. Search bar (2h)
 - 11.1. Searching (3h)
